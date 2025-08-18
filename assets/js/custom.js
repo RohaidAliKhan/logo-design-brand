@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initTestimonialSlider();
   initFaqAccordionOpenOnly(".accordion-item");
   initMilestoneCounter({ sectionSelector: ".bevisible_center-info", target: 7, digits: 2, duration: 1200 });
+  initPortfolioTabs();
 
   // Desktop (vertical)
   new Swiper(".challenge-web-slider", {
@@ -382,4 +383,23 @@ function initMilestoneCounter({ sectionSelector = ".bevisible_center-info", numb
   );
 
   io.observe(sectionEl);
+}
+function initPortfolioTabs() {
+  const tabs = document.querySelectorAll(".PortfolioTabs_tabs__mXsKA ul li");
+  const contents = document.querySelectorAll(".PortfolioTabs_images-grid__VTe_k");
+
+  if (!tabs.length || !contents.length) return; // agar elements hi nahi mile
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", function () {
+      // sab tabs se active class hatao
+      tabs.forEach(t => t.classList.remove("PortfolioTabs_active__6HucT"));
+      // sab contents se active class hatao
+      contents.forEach(c => c.classList.remove("PortfolioTabs_active__6HucT"));
+
+      // clicked tab aur uske content ko active do
+      this.classList.add("PortfolioTabs_active__6HucT");
+      contents[index].classList.add("PortfolioTabs_active__6HucT");
+    });
+  });
 }
