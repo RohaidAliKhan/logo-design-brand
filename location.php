@@ -42,7 +42,7 @@
                         </li>
                      </ul>
                   </div>
-                  <button class="primary-button_btn">Get Started Now</button>
+                  <button class="primary-button_btn" data-modal-target="mainPopup">Get Started Now</button>
                </div>
                <div class="Banner_right-info__ikW5r">
                   <div class="Banner_banner__dpmGm" style="background-image:url(assets/images/location/banner.webp)"></div>
@@ -151,7 +151,10 @@
             <div class="GetProject_main-info___RAsB">
                <h2>Launch Your Design Project Today!</h2>
                <p>Ready to bring your design dreams to life? We believe in fostering open communication – it&#x27;s the cornerstone of a successful collaboration. Whether you have a fully fleshed-out project in mind or simply a spark of an idea, we encourage you to talk to us!</p>
-               <div class="GetProject_btn-info__iWUOD"><button type="button" class="primary-button_btn">Let&#x27;s Discuss</button class="primary-button_btn"><a href="portfolio.html">View Portfolio</a></div>
+               <div class="GetProject_btn-info__iWUOD">
+                  <button type="button" class="primary-button_btn" data-modal-target="mainPopup">Let&#x27;s Discuss</button>
+                  <a href="portfolio.php" class="primary-button_btn">View Portfolio</a>
+               </div>
             </div>
          </div>
       </section>
@@ -975,7 +978,7 @@
                <div class="BottomCta_left-info___ZgXO">
                   <h2>Get Your Project Started Today</h2>
                   <p>At our company, we value communication and understand the importance of open dialogue between our team and our clients. That's why we encourage you to talk to us – whether it's to discuss a new project, ask a question, or provide feedback on our services.</p>
-                  <button class="primary-button_btn">Get Started Now</button>
+                  <button class="primary-button_btn" data-modal-target="mainPopup">Get Started Now</button>
                </div>
                <div class="BottomCta_right-info__1623a"><img alt="cta-img" loading="lazy" width="742" height="640" style="color:transparent" src="/assets/images/web-images/bottom-cta.webp"></div>
             </div>

@@ -14,7 +14,7 @@
             <div class="banner_left-info">
                <h1>Custom Ecommerce Website Design and Development</h1>
                <p>Make your online business flourish faster with the best web design and development solutions. Our effective and robust ecommerce web design and development services ensure higher audience engagement and conversion. We excel in creating various ecommerce solutions, allowing you to leverage the power of ecommerce and outshine the competition.</p>
-               <button class="primary-button_btn undefined">Get Started Now</button>
+               <button class="primary-button_btn" data-modal-target="mainPopup">Get Started Now</button>
             </div>
             <div class="Banner_right-info__ikW5r">
                <div class="Banner_banner__dpmGm" style="background-image:url(assets/images/ecommerce/banner.webp)"></div>
@@ -51,7 +51,7 @@
             <hr>
             <form novalidate="" class="cta_form">
                <div class="cta_inputfield"><input placeholder="Tell us about your ideal web design." type="text" class="form-control" name="message" value=""></div>
-               <button type="submit" class="primary-button_btn">Get a Design</button>
+               <button class="primary-button_btn" data-modal-target="mainPopup">Get a Design</button>
             </form>
          </div>
       </div>
@@ -130,7 +130,7 @@
                   <div class="BrandService_main-grid__A6VJr">
                      <div class="BrandService_left-info__nYc6L">
                         <h2>06</h2>
-                        <img alt="image" loading="lazy" width="720" height="585" style="color:transparent" c="assets/images/ecommerce/d6.jpg">
+                        <img alt="image" loading="lazy" width="720" height="585" style="color:transparent" src="assets/images/ecommerce/d6.jpg">
                      </div>
                      <div class="BrandService_right-info__LUrW0">
                         <h4>C2C Platforms</h4>
@@ -1159,7 +1159,7 @@
             <div class="BottomCta_left-info___ZgXO">
                <h2>Get Your Project Started Today</h2>
                <p>At our company, we value communication and understand the importance of open dialogue between our team and our clients. That's why we encourage you to talk to us – whether it's to discuss a new project, ask a question, or provide feedback on our services.</p>
-               <button class="primary-button_btn">Get Started Now</button>
+               <button class="primary-button_btn" data-modal-target="mainPopup">Get Started Now</button>
             </div>
             <div class="BottomCta_right-info__1623a"><img alt="cta-img" loading="lazy" width="742" height="640" style="color:transparent" src="/assets/images/web-images/bottom-cta.webp"></div>
          </div>

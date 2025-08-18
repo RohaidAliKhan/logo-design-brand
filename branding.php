@@ -14,7 +14,7 @@
             <div class="banner_left-info">
                <h1>Results-Driven Branding Company in USA</h1>
                <p>A branding agency led by results can elevate your brand perception by branding your business and its offerings uniquely and distinctively. <?php echo WEBSITE_NAME; ?>'s unique business branding services help you stand out with a brand identity that truly reflects your value proposition.</p>
-               <button class="primary-button_btn undefined">Order Now</button>
+               <button class="primary-button_btn" data-modal-target="mainPopup">Order Now</button>
             </div>
             <div class="Banner_right-info__ikW5r">
                <div class="Banner_banner__dpmGm" style="background-image:url(assets/images/branding/banner.webp)"></div>
@@ -250,7 +250,7 @@
             <hr>
             <form novalidate="" class="cta_form">
                <div class="cta_inputfield"><input placeholder="Let's make your ideal brand a reality." type="text" class="form-control" name="message" value=""></div>
-               <button type="submit" class="primary-button_btn">Get a Design</button>
+               <button class="primary-button_btn" data-modal-target="mainPopup">Get a Design</button>
             </form>
          </div>
       </div>
@@ -1186,7 +1186,7 @@
             <div class="BottomCta_left-info___ZgXO">
                <h2>Get Your Project Started Today</h2>
                <p>At our company, we value communication and understand the importance of open dialogue between our team and our clients. That's why we encourage you to talk to us – whether it's to discuss a new project, ask a question, or provide feedback on our services.</p>
-               <button class="primary-button_btn">Get Started Now</button>
+               <button class="primary-button_btn" data-modal-target="mainPopup">Get Started Now</button>
             </div>
             <div class="BottomCta_right-info__1623a"><img alt="cta-img" loading="lazy" width="742" height="640" style="color:transparent" src="/assets/images/web-images/bottom-cta.webp"></div>
          </div>

@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+  setActiveMenu();
+  mobileMenuSystem();
+  initModal();
   initAwardSlider();
   initPortfolioSliders();
   initMarquee(1.5);
@@ -34,6 +37,78 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+function setActiveMenu() {
+  const currentPath = window.location.pathname.split("/").pop(); 
+  const menuLinks = document.querySelectorAll(
+    ".header_header-menu a, .MobileMenu_main-ul__OoTVb a"
+  );
+
+  menuLinks.forEach(link => {
+    const linkPath = link.getAttribute("href");
+
+    // reset active classes
+    link.classList.remove("Header_active__rWiBf", "MobileMenu_active__9PE_5");
+
+    if (linkPath === currentPath) {
+      // Desktop active class
+      if (link.closest(".header_header-menu")) {
+        link.classList.add("Header_active__rWiBf");
+      }
+
+      // Mobile active class
+      if (link.closest(".MobileMenu_main-ul__OoTVb")) {
+        link.classList.add("MobileMenu_active__9PE_5");
+      }
+    }
+  });
+}
+
+function mobileMenuSystem() {
+  const menu = document.querySelector('.MobileMenu_header-menu__egD3v');
+  const hamburgers = document.querySelectorAll('.MobileMenu_hamburg__FgnCU');
+  const menuItems = document.querySelectorAll('.MobileMenu_header-menu__egD3v ul li');
+
+  // Hamburger toggle (open/close menu)
+  hamburgers.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      menu.classList.toggle('MobileMenu_open__Q6z7e');
+      hamburgers.forEach(h => h.classList.toggle('MobileMenu_open__Q6z7e'));
+    });
+  });
+
+  // Submenu toggle (for li that contains submenu)
+  menuItems.forEach(item => {
+    const subMenu = item.querySelector('.MobileMenu_sub-menu__TLSn_');
+    if (subMenu) {
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        subMenu.classList.toggle('MobileMenu_open__Q6z7e');
+      });
+    }
+  });
+}
+function initModal() {
+  // Open modal on trigger click
+  document.querySelectorAll("[data-modal-target]").forEach(trigger => {
+    trigger.addEventListener("click", function () {
+      const modalId = this.getAttribute("data-modal-target");
+      const modal = document.querySelector(`[data-modal="${modalId}"]`);
+      if (modal) modal.classList.add("active");
+
+      // Close events
+      const closeBtn = modal.querySelector("[data-modal-close]");
+      const overlay = modal.querySelector("[data-modal-overlay]");
+
+      function closeModal() {
+        modal.classList.remove("active");
+      }
+
+      if (closeBtn) closeBtn.addEventListener("click", closeModal);
+      if (overlay) overlay.addEventListener("click", closeModal);
+    });
+  });
+}
 function initAwardSlider() {
   new Swiper(".award-slider", {
     loop: true,

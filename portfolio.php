@@ -42,7 +42,7 @@
                         </li>
                      </ul>
                   </div>
-                  <button class="primary-button_btn">Get Started Now</button>
+                  <button class="primary-button_btn" data-modal-target="mainPopup">Get Started Now</button>
                </div>
                <div class="Banner_right-info__ikW5r">
                   <div class="Banner_banner__dpmGm" style="background-image:url(assets/images/portfolio/banner.webp)"></div>
@@ -317,7 +317,7 @@
             <div class="GetProject_main-info___RAsB">
                <h2>Let <?php echo WEBSITE_NAME; ?> Illuminate <br> Your Path to Brand Success</h2>
                <p>Our professional designers blend creativity and strategy to help your brand reach new heights. Our designs are crafted to inspire and connect with your audience. Just share your idea, and leave the rest to us.</p>
-               <div class="GetProject_btn-info__iWUOD"><button type="button" class="primary-button_btn">Design with Us</button></div>
+               <div class="GetProject_btn-info__iWUOD"><button type="button" class="primary-button_btn" data-modal-target="mainPopup">Design with Us</button></div>
             </div>
          </div>
       </section>
@@ -863,7 +863,7 @@
             <div class="BottomCta_left-info___ZgXO">
                <h2>3,500+ Brands Did It. Now It’s Your Turn.</h2>
                <p>We’re the logo design company trusted by first-time founders, scrappy startups, and ambitious creators ready to make their mark. Join 3,500+ brands who used our custom logo design services to launch bold, unforgettable identities.</p>
-               <button class="primary-button_btn">Your Brand Starts Here</button>
+               <button class="primary-button_btn" data-modal-target="mainPopup">Your Brand Starts Here</button>
             </div>
             <div class="BottomCta_right-info__1623a"><img alt="cta-img" loading="lazy" width="742" height="640" style="color:transparent" src="/assets/images/web-images/bottom-cta.webp"></div>
          </div>

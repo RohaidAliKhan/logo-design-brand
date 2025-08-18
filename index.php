@@ -43,11 +43,11 @@
                   </ul>
                   <h4>Starting from $129</h4>
                </div>
-               <button class="primary-button_btn undefined">Let’s Talk Logos!</button>
+               <button class="primary-button_btn" data-modal-target="mainPopup">Let’s Talk Logos!</button>
             </div>
             <div class="Banner_right-info__ikW5r">
                <div class="Banner_banner__dpmGm" style="background-image:url(assets/images/banner.webp)"></div>
-               <div class="Banner_box-text__LGjgs">
+               <div class="Banner_box-text__LGjgs" data-modal-target="mainPopup">
                   <div class="Banner_icon__0LxuE">
                      <svg stroke="currentColor" fill="none" stroke-width="2" viewbox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                         <line x1="7" y1="17" x2="17" y2="7"></line>
@@ -315,7 +315,7 @@
             <hr>
             <form novalidate="" class="cta_form">
                <div class="cta_inputfield"><input placeholder="What do you need designed?" type="text" class="form-control" name="message" value=""></div>
-               <button type="submit" class="primary-button_btn">Let’s Start</button>
+               <button class="primary-button_btn" data-modal-target="mainPopup">Let’s Start</button>
             </form>
          </div>
       </div>
@@ -853,7 +853,7 @@
                   <div class="growthmodel_custom-hide-more">
                      <p>Clean. Scalable. Name-First Branding. Our wordmark logo design services focus on strong, custom typography that makes your business name stand out. Perfect for digital brands, DTC products, and service providers that want brand clarity across all platforms.</p>
                   </div>
-                  <button class="primary-button_btn">Talk to Sales!</button>
+                  <button class="primary-button_btn" data-modal-target="mainPopup">Talk to Sales!</button>
                </div>
                <div class="growthmodel_right-info"><img alt="image" loading="lazy" width="524" height="398" style="color:transparent" src="/assets/images/web-images/wod1.webp"></div>
             </div>
@@ -863,7 +863,7 @@
                   <div class="growthmodel_custom-hide-more">
                      <p>Initials engineered to simplify complex brand names into sharp monograms. Our lettermark logo design services help you create sleek, modern visuals ideal for tech companies, law firms, and enterprise brands needing compact, scalable identities.</p>
                   </div>
-                  <button class="primary-button_btn">Talk to Sales!</button>
+                  <button class="primary-button_btn" data-modal-target="mainPopup">Talk to Sales!</button>
                </div>
                <div class="growthmodel_right-info"><img alt="image" loading="lazy" width="500" height="452" decoding="async" data-nimg="1" style="color:transparent" src="/assets/images/web-images/letter1.webp"></div>
             </div>
@@ -873,7 +873,7 @@
                   <div class="growthmodel_custom-hide-more">
                      <p>The industry standard for versatility. Our combination logo design services help you blend typography and icons to give your brand multi-format flexibility. Great for eCommerce, service businesses, and startups that need an adaptable identity across every channel</p>
                   </div>
-                  <button class="primary-button_btn">Talk to Sales!</button>
+                  <button class="primary-button_btn" data-modal-target="mainPopup">Talk to Sales!</button>
                </div>
                <div class="growthmodel_right-info"><img alt="image" loading="lazy" width="549" height="336" decoding="async" data-nimg="1" style="color:transparent" src="/assets/images/web-images/comb1.webp"></div>
             </div>
@@ -883,7 +883,7 @@
                   <div class="growthmodel_custom-hide-more">
                      <p>Timeless, badge-based identity. We specialize in emblem logo design services for businesses that need credibility, heritage, and visual strength. Popular with coffee brands, schools, auto companies, and breweries—these logos make your brand look established from day one.</p>
                   </div>
-                  <button class="primary-button_btn">Talk to Sales!</button>
+                  <button class="primary-button_btn" data-modal-target="mainPopup">Talk to Sales!</button>
                </div>
                <div class="growthmodel_right-info"><img alt="image" loading="lazy" width="897" height="1161" decoding="async" data-nimg="1" style="color:transparent" src="/assets/images/web-images/emblem.webp"></div>
             </div>
@@ -893,7 +893,7 @@
                   <div class="growthmodel_custom-hide-more">
                      <p>Your brand. Your character. As a top mascot logo design company, we create character logos that bring personality and energy to your business. Perfect for sports, F&amp;B, media, and kids’ brands that want instant brand connection.</p>
                   </div>
-                  <button class="primary-button_btn">Talk to Sales!</button>
+                  <button class="primary-button_btn" data-modal-target="mainPopup">Talk to Sales!</button>
                </div>
                <div class="growthmodel_right-info"><img alt="image" loading="lazy" width="897" height="1161" decoding="async" data-nimg="1" style="color:transparent" src="/assets/images/web-images/mascot.webp"></div>
             </div>
@@ -1147,7 +1147,7 @@
             <div class="BottomCta_left-info___ZgXO">
                <h2>3,500+ Brands Did It. Now It’s Your Turn.</h2>
                <p>We’re the logo design company trusted by first-time founders, scrappy startups, and ambitious creators ready to make their mark. Join 3,500+ brands who used our custom logo design services to launch bold, unforgettable identities.</p>
-               <button class="primary-button_btn">Your Brand Starts Here</button>
+               <button class="primary-button_btn" data-modal-target="mainPopup">Your Brand Starts Here</button>
             </div>
             <div class="BottomCta_right-info__1623a"><img alt="cta-img" loading="lazy" width="742" height="640" style="color:transparent" src="/assets/images/web-images/bottom-cta.webp"></div>
          </div>

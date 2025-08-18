@@ -14,7 +14,7 @@
                <div class="banner_left-info">
                   <h1>How It Works</h1>
                   <p>Great design starts with great designers, and we’ve got the best. Connect with us now! Chat with one of our design experts, and let’s make your project shine.</p>
-                  <button class="primary-button_btn">Get in Touch</button>
+                  <button class="primary-button_btn" data-modal-target="mainPopup">Get in Touch</button>
                </div>
                <div class="Banner_right-info__ikW5r">
                   <div class="Banner_banner__dpmGm" style="background-image:url(assets/images/how-it-works/banner.webp)"></div>
@@ -471,7 +471,7 @@
             <div class="GetProject_main-info___RAsB">
                <h2>See How We Work <br>Begin with a Consultation Now!</h2>
                <p>Let’s craft a logo that makes your brand stand out. Contact <?php echo WEBSITE_NAME; ?> today to start your professional logo design journey!</p>
-               <div class="GetProject_btn-info__iWUOD"><button type="button" class="primary-button_btn">Start Your Project</button></div>
+               <div class="GetProject_btn-info__iWUOD"><button type="button" class="primary-button_btn" data-modal-target="mainPopup">Start Your Project</button></div>
             </div>
          </div>
       </section>

@@ -42,7 +42,7 @@
                         </li>
                      </ul>
                   </div>
-                  <button class="primary-button_btn">Get Started Now</button>
+                  <button class="primary-button_btn" data-modal-target="mainPopup">Get Started Now</button>
                </div>
                <div class="Banner_right-info__ikW5r">
                   <div class="Banner_banner__dpmGm" style="background-image:url(assets/images/packages/banner.webp)"></div>
@@ -534,7 +534,10 @@
             <div class="GetProject_main-info___RAsB">
                <h2>Small Budget? Big Ideas? We’ve Got You Covered!</h2>
                <p><?php echo WEBSITE_NAME; ?> delivers professional design solutions at unbeatable prices. Our packages ensure quality without compromise. We craft unique brand identities that make your business stand out. Share your vision with us, and we’ll handle the rest—affordable, reliable, and tailored to your success!</p>
-               <div class="GetProject_btn-info__iWUOD"><button type="button" class="primary-button_btn">Start Your Design Now!</button class="primary-button_btn"><a href="portfolio.html">View Our Packages!</a></div>
+               <div class="GetProject_btn-info__iWUOD">
+                  <button type="button" class="primary-button_btn" data-modal-target="mainPopup">Start Your Design Now!</button> 
+                  <a type="button" class="primary-button_btn" href="packages.php">View Our Packages!</a> 
+               </div>
             </div>
          </div>
       </section>
@@ -753,7 +756,7 @@
             <div class="BottomCta_left-info___ZgXO">
                <h2>Start Your Project with the Right Package</h2>
                <p>Our team values clear communication and is here to assist you every step of the way.Go through our affordable packages, and get transparent pricing tailored to your needs. Let’s create something exceptional—talk to us today!</p>
-               <button class="primary-button_btn">Get started</button>
+               <button class="primary-button_btn" data-modal-target="mainPopup">Get started</button>
             </div>
             <div class="BottomCta_right-info__1623a"><img alt="cta-img" loading="lazy" width="742" height="640" style="color:transparent" src="/assets/images/web-images/bottom-cta.webp"></div>
          </div>

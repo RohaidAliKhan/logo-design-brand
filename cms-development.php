@@ -14,7 +14,7 @@
             <div class="banner_left-info">
                <h1>Robust Content Management System Development</h1>
                <p>In today's digital landscape, your content is the most valuable asset of your business. A robust Content Management System (CMS) is the key to safeguarding its security and ensuring its constant availability. Our top-notch CMS solutions are built with scalability, security, and SEO optimization at their core. We offer custom CMS development services tailored to your specific needs.</p>
-               <button class="primary-button_btn undefined">Get Started Now</button>
+               <button class="primary-button_btn" data-modal-target="mainPopup">Get Started Now</button>
             </div>
             <div class="Banner_right-info__ikW5r">
                <div class="Banner_banner__dpmGm" style="background-image:url(assets/images/cms/banner.webp)"></div>
@@ -51,7 +51,7 @@
             <hr>
             <form novalidate="" class="cta_form">
                <div class="cta_inputfield"><input placeholder="Tell us about your ideal web design." type="text" class="form-control" name="message" value=""></div>
-               <button type="submit" class="primary-button_btn">Get a Design</button>
+               <button class="primary-button_btn" data-modal-target="mainPopup">Get a Design</button>
             </form>
          </div>
       </div>
@@ -1020,7 +1020,7 @@
             <div class="BottomCta_left-info___ZgXO">
                <h2>Get Your Project Started Today</h2>
                <p>At our company, we value communication and understand the importance of open dialogue between our team and our clients. That's why we encourage you to talk to us – whether it's to discuss a new project, ask a question, or provide feedback on our services.</p>
-               <button class="primary-button_btn">Get Started Now</button>
+               <button class="primary-button_btn" data-modal-target="mainPopup">Get Started Now</button>
             </div>
             <div class="BottomCta_right-info__1623a"><img alt="cta-img" loading="lazy" width="742" height="640" style="color:transparent" src="/assets/images/web-images/bottom-cta.webp"></div>
          </div>

@@ -48,7 +48,7 @@
                         </li>
                      </ul>
                   </div>
-                  <button class="primary-button_btn undefined">Get Started Now</button>
+                  <button class="primary-button_btn" data-modal-target="mainPopup">Get Started Now</button>
                </div>
                <div class="Banner_right-info__ikW5r">
                   <div class="Banner_banner__dpmGm" style="background-image:url(assets/images/about-us/banner.webp)"></div>
@@ -367,7 +367,7 @@
                <div class="BottomCta_left-info___ZgXO">
                   <h2>Get Your Project Started Today</h2>
                   <p>At our company, we value communication and understand the importance of open dialogue between our team and our clients. That's why we encourage you to talk to us – whether it's to discuss a new project, ask a question, or provide feedback on our services.</p>
-                  <button class="primary-button_btn">Get Started Now</button>
+                  <button class="primary-button_btn" data-modal-target="mainPopup">Get Started Now</button>
                </div>
                <div class="BottomCta_right-info__1623a"><img alt="cta-img" loading="lazy" width="742" height="640" style="color:transparent" src="/assets/images/web-images/bottom-cta.webp"></div>
             </div>
