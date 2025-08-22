@@ -250,7 +250,7 @@
             <hr>
             <form novalidate="" class="cta_form">
                <div class="cta_inputfield"><input placeholder="Let's make your ideal brand a reality." type="text" class="form-control" name="message" value=""></div>
-               <button class="primary-button_btn" data-modal-target="mainPopup">Get a Design</button>
+               <button class="primary-button_btn" type="button" data-modal-target="mainPopup">Get a Design</button>
             </form>
          </div>
       </div>

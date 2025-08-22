@@ -313,9 +313,9 @@
          <div class="cta_main-info">
             <h2>Logo? Branding? Website? Let’s Build It Right.</h2>
             <hr>
-            <form novalidate="" class="cta_form">
+            <form class="cta_form">
                <div class="cta_inputfield"><input placeholder="What do you need designed?" type="text" class="form-control" name="message" value=""></div>
-               <button class="primary-button_btn" data-modal-target="mainPopup">Let’s Start</button>
+               <button type="button" class="primary-button_btn" data-modal-target="mainPopup">Let’s Start</button>
             </form>
          </div>
       </div>

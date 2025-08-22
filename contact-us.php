@@ -26,18 +26,25 @@
             </div>
             <div class="ContactFrom_right-info__M_4Wg">
                <h2>Get Your Project <br>Started Today</h2>
-               <form novalidate="" class="ContactFrom_contact-form___V6sh">
+               <form novalidate="" class="ContactFrom_contact-form___V6sh form_submission" data-recaptcha="<?php echo GOOGLE_RECAPTCHA_SITE_KEY; ?>">
+                  <input type="hidden" name="url" value="<?php echo htmlspecialchars(CURRENT_URL, ENT_QUOTES, 'UTF-8'); ?>">
+                  <input type="hidden" name="domain" value="www.<?php echo WEBSITE_LINK ?>">
+                  <input type="hidden" name="subject" value="Banner Form (www.<?php echo WEBSITE_LINK ?>)">
                   <div class="ContactFrom_inputField__GMUX1">
-                     <div class="ContactFrom_input-flex___f9qM undefined"><input placeholder="Your name*" type="text" class="form-control" name="firstName" value=""></div>
+                     <div class="ContactFrom_input-flex___f9qM undefined">
+                        <input placeholder="Your name*" type="text" class="form-control" name="cn" value="">
+                     </div>
                   </div>
                   <div class="ContactFrom_inputField__GMUX1">
-                     <div class="ContactFrom_input-flex___f9qM ContactFrom_email__eovGH"><input placeholder="Your email address*" type="email" class="form-control" name="cemail" value=""></div>
+                     <div class="ContactFrom_input-flex___f9qM ContactFrom_email__eovGH">
+                        <input placeholder="Your email address*" type="email" class="form-control" name="em" value="">
+                     </div>
                   </div>
                   <div class="ContactFrom_inputField__GMUX1">
                      <div class="ContactFrom_input-flex___f9qM ContactFrom_call__64O0U">
                         <div class="PhoneInput">
                            <div class="PhoneInputCountry">
-                              <select aria-label="Phone number country" class="PhoneInputCountrySelect">
+                              <select name="country" data-name="country" aria-label="Phone number country" class="PhoneInputCountrySelect">
                                  <option value="ZZ">International</option>
                                  <option value="AF">Afghanistan</option>
                                  <option value="AX">Åland Islands</option>
@@ -285,15 +292,19 @@
                                  <option value="ZM">Zambia</option>
                                  <option value="ZW">Zimbabwe</option>
                               </select>
-                              <div aria-hidden="true" class="PhoneInputCountryIcon PhoneInputCountryIcon--border"><img class="PhoneInputCountryIconImg" alt="United States" src="assets/images/contact-us/us.svg"></div>
+                              <div aria-hidden="true" class="PhoneInputCountryIcon PhoneInputCountryIcon--border">
+                                 <img class="PhoneInputCountryIconImg" alt="United States" src="assets/images/contact-us/us.svg">
+                              </div>
                               <div class="PhoneInputCountrySelectArrow"></div>
                            </div>
-                           <input type="tel" autocomplete="tel" placeholder="Enter phone number*" class="PhoneInputInput" value="+1">
+                           <input type="tel" name="pn" autocomplete="tel" placeholder="Enter phone number*" class="PhoneInputInput" value="+1">
                         </div>
                      </div>
                   </div>
                   <div class="ContactFrom_inputField__GMUX1">
-                     <div class="ContactFrom_input-flex___f9qM ContactFrom_message__P6hEa"><textarea rows="4" name="message" placeholder="Your message" type="text" class="form-control"></textarea></div>
+                     <div class="ContactFrom_input-flex___f9qM ContactFrom_message__P6hEa">
+                        <textarea rows="4" name="msg" placeholder="Your message" type="text" class="form-control"></textarea>
+                     </div>
                   </div>
                   <button type="submit" class="primary-button_btn">
                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -301,6 +312,11 @@
                      </svg>
                      Send message
                   </button>
+                  <div class="error mt-3 alert alert-danger text-left mb-0" style="display: none"></div>
+                  <div class="success mt-3 alert alert-success text-left mb-0" style="display: none"></div>
+                  <div class="loader" style="display: none">
+                     <img alt="loader" src="/loader.gif">
+                  </div>
                </form>
                <p>We are committed to protecting your privacy. We will never collect information about you without your explicit consent.</p>
             </div>

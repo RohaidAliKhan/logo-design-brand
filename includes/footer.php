@@ -121,18 +121,25 @@
                      <h2>Up To <b>40%</b>  Discounts!</h2>
                      <h4>Offer Available Till 26th August</h4>
                      <p>We’ll get back with strategy, pricing, and fast turnaround. Get a strategy-first logo that speaks to your audience, sells your story, and grows with your brand.</p>
-                     <form novalidate="" class="PopupForm_popupForm__Ew0Vk popup-main-form" data-hs-cf-bound="true">
+                     <form novalidate="" class="PopupForm_popupForm__Ew0Vk popup-main-form form_submission" data-hs-cf-bound="true" data-recaptcha="<?php echo GOOGLE_RECAPTCHA_SITE_KEY; ?>">
+                        <input type="hidden" name="url" value="<?php echo htmlspecialchars(CURRENT_URL, ENT_QUOTES, 'UTF-8'); ?>">
+                        <input type="hidden" name="domain" value="www.<?php echo WEBSITE_LINK ?>">
+                        <input type="hidden" name="subject" value="Banner Form (www.<?php echo WEBSITE_LINK ?>)">
                         <div class="PopupForm_inputField__Y_4nR" >
-                           <div class="PopupForm_input-flex__HUi23 undefined" ><input placeholder="Your name*" class="form-control" type="text" value="" name="firstName" fdprocessedid="o48d6i"></div>
+                           <div class="PopupForm_input-flex__HUi23 undefined" >
+                              <input placeholder="Your name*" class="form-control" type="text" value="" name="cn" fdprocessedid="o48d6i">
+                           </div>
                         </div>
                         <div class="PopupForm_inputField__Y_4nR" >
-                           <div class="PopupForm_input-flex__HUi23 PopupForm_email__DbL35" ><input placeholder="Your email address*" class="form-control" type="email" value="" name="cemail" fdprocessedid="il8qsd"></div>
+                           <div class="PopupForm_input-flex__HUi23 PopupForm_email__DbL35" >
+                              <input placeholder="Your email address*" class="form-control" type="email" value="" name="em" fdprocessedid="il8qsd">
+                           </div>
                         </div>
                         <div class="PopupForm_inputField__Y_4nR" >
                            <div class="PopupForm_input-flex__HUi23 PopupForm_call__go4Gw" >
                               <div class="PhoneInput" >
                                  <div class="PhoneInputCountry" >
-                                    <select aria-label="Phone number country" class="PhoneInputCountrySelect">
+                                    <select  data-name="Country" name="country" aria-label="Phone number country" class="PhoneInputCountrySelect">
                                        <option value="ZZ">International</option>
                                        <option value="AF">Afghanistan</option>
                                        <option value="AX">Åland Islands</option>
@@ -380,20 +387,31 @@
                                        <option value="ZM">Zambia</option>
                                        <option value="ZW">Zimbabwe</option>
                                     </select>
-                                    <div aria-hidden="true" class="PhoneInputCountryIcon PhoneInputCountryIcon--border" ><img class="PhoneInputCountryIconImg" alt="United States" src="https://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg"></div>
+                                    <div aria-hidden="true" class="PhoneInputCountryIcon PhoneInputCountryIcon--border" >
+                                       <img class="PhoneInputCountryIconImg" alt="United States" src="https://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg">
+                                    </div>
                                     <div class="PhoneInputCountrySelectArrow" ></div>
                                  </div>
-                                 <input autocomplete="tel" placeholder="Enter phone number*" class="PhoneInputInput" type="tel" value="+1" fdprocessedid="j9wcdr">
+                                 <input name="pn" autocomplete="tel" placeholder="Enter phone number*" class="PhoneInputInput" type="tel" value="+1" fdprocessedid="j9wcdr" required>
                               </div>
                            </div>
                         </div>
                         <div class="PopupForm_inputField__Y_4nR" >
-                           <div class="PopupForm_input-flex__HUi23 PopupForm_budget__D5oUs" ><input min="1" placeholder="Your Budget" class="form-control" type="number" value="" name="budget" fdprocessedid="9osfgh"></div>
+                           <div class="PopupForm_input-flex__HUi23 PopupForm_budget__D5oUs" >
+                              <input min="1" placeholder="Your Budget" class="form-control" type="number" value="" data-name="Budget" name="budget" fdprocessedid="9osfgh">
+                           </div>
                         </div>
                         <div class="PopupForm_inputField__Y_4nR" >
-                           <div class="PopupForm_input-flex__HUi23 PopupForm_message__UCI8V" ><textarea rows="4" name="message" placeholder="Your message" type="text" class="form-control"></textarea></div>
+                           <div class="PopupForm_input-flex__HUi23 PopupForm_message__UCI8V" >
+                              <textarea rows="4" name="msg" placeholder="Your message" type="text" class="form-control"></textarea>
+                           </div>
                         </div>
                         <button type="submit" class="primary-button_btn" fdprocessedid="eopst">Let's Start</button>
+                        <div class="error mt-3 alert alert-danger text-left mb-0" style="display: none"></div>
+                        <div class="success mt-3 alert alert-success text-left mb-0" style="display: none"></div>
+                        <div class="loader" style="display: none">
+                           <img alt="loader" src="/loader.gif">
+                        </div>
                      </form>
                   </div>
                </div>
@@ -402,7 +420,10 @@
       </div>
    </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 <script src="assets/js/custom.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=<?php echo GOOGLE_RECAPTCHA_SITE_KEY; ?>" async defer></script>
+<script src="assets/js/form_submission.js"></script>

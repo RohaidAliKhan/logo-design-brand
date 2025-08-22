@@ -51,7 +51,7 @@
             <hr>
             <form novalidate="" class="cta_form">
                <div class="cta_inputfield"><input placeholder="Tell us about your ideal web design." type="text" class="form-control" name="message" value=""></div>
-               <button class="primary-button_btn" data-modal-target="mainPopup">Get a Design</button>
+               <button class="primary-button_btn" data-modal-target="mainPopup" type="button">Get a Design</button>
             </form>
          </div>
       </div>

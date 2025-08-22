@@ -10009,3 +10009,25 @@ a {
 }
 
 /*------Inner Pages CSS End-----------*/
+
+
+label.error {
+    display: none !important;
+}
+
+input.error {
+    background-color: #f8d7da !important;
+    border-color: #f1aeb5 !important;
+}
+
+input.error::placeholder {
+    color: #58151c; /* Sets placeholder color to red */
+}
+
+.loader {
+    text-align: center;
+}
+
+.loader img {
+    width: 50px;
+}

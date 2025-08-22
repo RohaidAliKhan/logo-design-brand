@@ -1,0 +1,24 @@
+# Composer dependencies
+/vendor/
+
+# Node dependencies (if any)
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*
+
+# Cache & logs
+/storage/
+bootstrap/cache/
+*.log
+
+# IDE & OS junk
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Uploaded files (if you don’t want them in Git)
+public/uploads/
