@@ -1,4 +1,5 @@
 <?php include 'config.php'; ?>
+<?php include 'packages-data.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">

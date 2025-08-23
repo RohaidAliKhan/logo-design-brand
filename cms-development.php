@@ -522,6 +522,7 @@
             <h2>Pocket-Friendly Pricing <br> For The Perfect Design And Templates For All</h2>
             <p>While we understand our competitive landscape, our core value lies in providing quality over quantity. Our transparent and fair CMS web development pricing packages, including our entire range of web design, logo design, and branding services, ensure you find the perfect fit for your budget and brand needs. We prioritize dedicated effort and personalized attention, guaranteeing unique and impactful solutions for each brand, unlike those focused on quantity.</p>
          </div>
+         
          <div class="pricing_price-tabs">
             <ul>
                <li class="pricing_active">Logo Packages</li>
