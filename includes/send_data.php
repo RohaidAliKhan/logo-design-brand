@@ -53,6 +53,20 @@
 		// $return_table = insert_into_table($f_name, $l_name, $email, $number, $url, $domain, $subject, $conn, null, null);
 		$return_param = send_mail_to_admin($name, null, $email, $number, $url, $domain, $subject, null, null, ADMIN_EMAIL, $optional);
 		echo json_encode(array('response' => $return_param, 'package_name' => $_POST['optional']['package_name']));
+	}else if($action == 'logo_form'){
+		$name = $_POST['name'];
+		$email = $_POST['email'];
+		$number = $_POST['phone'];
+		$url = $_POST['url'];
+		$domain = $_POST['domain'];
+		$subject = $_POST['subject'];
+		if(isset($_POST['optional'])){
+			$optional = $_POST['optional'];
+		}else{
+			$optional = null;
+		}
+		$return_param = send_mail_to_admin($name, null, $email, $number, $url, $domain, $subject, null, null, ADMIN_EMAIL, $optional);
+		echo json_encode(array('response' => $return_param, 'package_name' => $_POST['optional']['package_name']));
 	}else if($action == 'form_submission'){
 		$name = $_POST['name'];
 		$email = $_POST['email'];

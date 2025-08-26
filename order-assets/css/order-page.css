@@ -2249,3 +2249,7 @@ li#logo-brief.hide {
 .ElementsApp .InputElement {
   color: black !important;
 }
+
+.select-logo .list-inline > li img.active {
+    border: 3px solid rgb(151, 192, 62);
+}

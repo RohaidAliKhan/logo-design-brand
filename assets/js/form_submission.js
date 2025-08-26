@@ -162,6 +162,9 @@ $(document).ready(function(){
 												window.location.href = window.location.origin + "/payment/index.php?slug="+data.package_name;
 											}
 										}
+										if(get_form == 'logo_form'){
+											window.location.href = window.location.origin + "/payment/index.php?slug="+data.package_name;
+										}
 
 									}else{
 										$(e).find('.error').html('Error Occurred');

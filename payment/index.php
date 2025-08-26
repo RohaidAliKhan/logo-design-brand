@@ -1,10 +1,40 @@
-﻿<?php include '../includes/header.php' ?>
-<meta name="description" content="Best Web Design Agency located in Dallas Taxes offers web, logo, digital marketing, stationery services. Hire professional web designers now!">
+﻿<?php include '../order-includes/header.php' ?>
+<?php
+    $slug = $_GET['slug'] ?? null;
+    if (empty($slug)) {
+        header("Location: /");
+        exit;
+    }
+    $packageDetails = null;
+    foreach ($packages as $categoryName => $categoryPackages) {
+        if (isset($categoryPackages[$slug])) {
+            $packageDetails = $categoryPackages[$slug];
+            $packageDetails['category'] = $categoryName; // optional
+            break;
+        }
+    }
+    if (!$packageDetails) {
+        header("Location: /");
+        exit;
+    }
+    session_start();
+    if (empty($_SESSION['name'])) {
+        header("Location: /");
+        exit;
+    }
+?>
+    <title>Payment Form | <?php echo $packageDetails['title']; ?></title>
+    <meta name="description" content="Best Web Design Agency located in Dallas Taxes offers web, logo, digital marketing, stationery services. Hire professional web designers now!">
+    <style>
+        section.steps-seq ul li:last-child:after{
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="mainbody">
     <div class="commented-container">
-        <?php include '../includes/menu.php' ?>
+        <?php include '../order-includes/menu.php' ?>
         <section class="page-title">
             <div class="container">
                 <h1>Let's Get Started with Your Project</h1>
@@ -17,10 +47,10 @@
                     <li style="width: 33%">
                         <h4>Order Now</h4>
                     </li>
-                    <li style="width: 33%">
+                    <li style="width: 33%; <?php echo $packageDetails['form_id'] == 0 ? 'display:block;' : 'display:none;'; ?>">
                         <h4>Logo Brief</h4>
                     </li>
-                    <li class="active hide" id="logo-brief" style="width: 33%">
+                    <li class="active" id="logo-brief" style="width: 33%">
                         <h4>Payment</h4>
                     </li>
                 </ul>
@@ -330,7 +360,7 @@
                                         <input type="text" data-validation="required" readonly="" name="email" placeholder="" id="txtEmailAddress" required>
                                     </li>
                                     <hr>
-                                    <img class="img-responsive in-block" src="../assets/payment/visa.png" style="text-align: center;margin: 0 auto;">
+                                    <img class="img-responsive in-block" src="../order-assets/img/visa.png" style="text-align: center;margin: 0 auto;">
                                     <li>
                                         <div class="stripe-form-wrapper require-validation mt-4"
                                             data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"
@@ -378,7 +408,7 @@
                                 <ul>
                                     <li class="submit-btn">
                                         <button type="submit" class="btn btn-red a-btn" id="stripe-submit" name="orderForm" value="1" fdprocessedid="7lan7o">Submit</button>
-                                        <img class="img-responsive in-block" src="../assets/payment/verfication.png" style="margin-top: 16px;">
+                                        <img class="img-responsive in-block" src="../order-assets/img/verfication.png" style="margin-top: 16px;">
                                     </li>
                                 </ul>
                             </div>
@@ -424,7 +454,7 @@
                 </div>
             </div>
         </section>
-        <?php include '../includes/footer.php' ?>
+        <?php include '../order-includes/footer.php' ?>
         <script src="https://js.stripe.com/v3/"></script>
         <script>
             var stripe = Stripe('<?php echo STRIPE_KEY; ?>');

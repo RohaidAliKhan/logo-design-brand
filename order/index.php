@@ -37,7 +37,7 @@
                     <li class="active">
                         <h4>Order Now</h4>
                     </li>
-                    <li class="progressbar-2 hide" id="logo-brief">
+                    <li class="progressbar-2 hide" id="logo-brief" style="width: 33%; <?php echo $packageDetails['form_id'] == 0 ? 'display:block;' : 'display:none;'; ?>">
                         <h4 id="dynamicValue">Logo Brief</h4>
                     </li>
                     <li class="color">
