@@ -61,6 +61,9 @@
                 <div class="row">
                     <div class="col-md-9">
                         <form id="order-place" action="javascript:void(0)" method="post">
+                            <input type="hidden" id="package_name" name="package_name" value="<?php echo $_SESSION['package_name']; ?>">
+                            <input type="hidden" id="package_price" name="package_price" value="<?php echo $_SESSION['package_price']; ?>">
+                            <input type="hidden" id="crm_cus_id" name="crm_cus_id" value="<?php echo $_SESSION['crm_cus_id'] ?>">
                             <!-- One "tab" for each step in the form: -->
                             <div class="form-sec step-1-form logo-brief-form">
                                 <h4 style="margin-bottom: 30px">Payment</h4>
@@ -159,7 +162,7 @@
                             <div class="form-sec">
                                 <ul>
                                     <li class="submit-btn">
-                                        <button type="submit" class="btn btn-red a-btn" id="stripe-submit" name="orderForm" value="1" fdprocessedid="7lan7o">Submit</button>
+                                        <button type="submit" class="btn btn-red a-btn" id="stripe-submit" name="orderForm">Submit</button>
                                         <img class="img-responsive in-block" src="../order-assets/img/verfication.png" style="margin-top: 16px;">
                                     </li>
                                 </ul>
@@ -322,6 +325,7 @@
                     address_country: $('#countryId').val()
                 }).then(function(result) {
                     var errorCount = checkEmptyFileds();
+                    console.log(errorCount);
                     if ((result.error) || (errorCount == 1)) {
                         // Inform the user if there was an error.
                         if (result.error) {
@@ -355,8 +359,9 @@
                 var phone = $('#txtPhoneNumber').val();
                 var email = $('#txtEmailAddress').val();
                 var crm_id = localStorage.getItem("crm_id");
-                var total_price = localStorage.getItem("package_price");
-                var package_name = localStorage.getItem("package_name").replace(/\s+/g, ' ').trim();
+                var total_price = $('#package_price').val();
+                var package_name = $('#package_name').val();
+                var crm_cus_id = $('#crm_cus_id').val();
                 $.ajax({
                     type: "POST",
                     url: '../../includes/send_data.php?action=payment_form',
@@ -373,6 +378,7 @@
                         crm_id: crm_id,
                         total_price: total_price,
                         package_name: package_name,
+                        crm_cus_id: crm_cus_id,
                         stripeToken: token.id
                     },
                     success: function(data) {

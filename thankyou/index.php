@@ -1,8 +1,9 @@
-<?php include '../includes/header.php' ?>
+    <?php include '../order-includes/header.php' ?>
+    <title>Thankyou</title>
 </head>
 
 <body class="home-page">
-    <?php include '../includes/menu.php' ?>
+    <?php include '../order-includes/menu.php' ?>
     <section class="main-privacy">
         <div class="container">
             <div class="row">

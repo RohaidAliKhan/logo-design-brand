@@ -89,6 +89,8 @@ $(document).ready(function(){
 	        },
 			submitHandler: function(e){
 				var obj = {};
+				var $submitBtn = $(e).find('[type="submit"]');
+				$submitBtn.prop('disabled', true);
 				var dataOption = $(e).find('[data-name]');
 				var dataRadioOption = $(e).find("input[type='radio']:checked");
 				if(dataOption.length != 0){
@@ -148,12 +150,12 @@ $(document).ready(function(){
 											// window.location.href = "/order/thankyou-1.php?name="+data.name+"&email="+data.email+"&form="+data.form;
 										}else{
 											$(e).trigger("reset");
-											$(e).find([type="submit"]).hide();
+											$submitBtn.hide();
 											$(e).find('.success').html('<p class="mb-0 mt-0 pb-0">Thank you for filling out your information!</p>');
 											$(e).find('.success').show();
 										}
 										if(get_form == 'landing_page'){
-											window.location.href = window.location.origin + "/thankyou.php";
+											window.location.href = window.location.origin + "/thankyou/index.php";
 										}
 										if(get_form == 'order_form'){
 											if(form_type == 0){
@@ -168,18 +170,21 @@ $(document).ready(function(){
 
 									}else{
 										$(e).find('.error').html('Error Occurred');
+										$submitBtn.prop('disabled', false);
 									}
 									$(e).find('.loader').hide();
 								},
 								error: function(xhr, status, error){
 									$(e).find('.error').html('Error Occurred ' + error);
 									$(e).find('.loader').hide();
+									$submitBtn.prop('disabled', false);
 								}
 							});
 						}).catch(function(err) {
 							console.error("Recaptcha failed:", err);
 							$(e).find('.error').html('Recaptcha failed, please try again.');
 							$(e).find('.loader').hide();
+							$submitBtn.prop('disabled', false);
 						});
                 });
 		    }

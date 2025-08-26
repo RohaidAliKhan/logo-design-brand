@@ -2,6 +2,9 @@
 	session_start();
     ini_set('display_errors', 1); 
 
+	require_once '../vendor/autoload.php';
+
+	use Stripe\StripeClient;
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\SMTP;
 	use PHPMailer\PHPMailer\Exception;
@@ -65,6 +68,16 @@
      	
       	if ($curlResponseArray["success"] == true && ! empty($curlResponseArray["action"]) && $curlResponseArray["score"] >= 0.5) {
 			$return_param = send_mail_to_admin($name, null, $email, $number, $url, $domain, $subject, null, null, ADMIN_EMAIL, $optional);
+			$senderRequest = array(
+				'name' => $name,
+				'email' => $email,
+				'contact' => $number,
+				'url' => $url,
+				'message' => null,
+				'subject' => $subject,
+				'domain' => $domain
+			);
+			sendLeadToTerminal($senderRequest);
 			echo json_encode(array('response' => $return_param, 'package_name' => $_POST['optional']['package_name']));
 		}else{
           	echo json_encode(array('response' => 'Invalid request.', 'status' => false));
@@ -99,6 +112,18 @@
      	
       	if ($curlResponseArray["success"] == true && ! empty($curlResponseArray["action"]) && $curlResponseArray["score"] >= 0.5) {
 			$return_param = send_mail_to_admin($name, null, $email, $number, $url, $domain, $subject, null, null, ADMIN_EMAIL, $optional);
+			$senderRequest = array(
+				'logo_info' => $optional['Logo Info'],
+				'selected_logo' => $optional['Selected Logo'],
+				'brief_text' => $optional['Brief Text'],
+				'brief_tagline' => $optional['Brief Tagline'],
+				'brief_description' => $optional['Brief Description'],
+				'design_concept' => $optional['Design Concept'],
+				'existing_website' => $optional['Existing Website'],
+				'client_id' => $optional['CRM Id'],
+				'email' => $email
+			);
+			sendLogoFormToTerminal($senderRequest);
 			echo json_encode(array('response' => $return_param, 'package_name' => $_POST['optional']['package_name']));
 		}else{
           	echo json_encode(array('response' => 'Invalid request.', 'status' => false));
@@ -149,10 +174,152 @@
      	
       	if ($curlResponseArray["success"] == true && ! empty($curlResponseArray["action"]) && $curlResponseArray["score"] >= 0.5) {
           	$return_param = send_mail_to_admin($name, null, $email, $phone, $url, $domain, $subject, null, $message, ADMIN_EMAIL, $optional);
+			$senderRequest = array(
+				'name' => $name,
+				'email' => $email,
+				'contact' => $phone,
+				'url' => $url,
+				'message' => $message,
+				'subject' => $subject,
+				'domain' => $domain
+			);
+			sendLeadToTerminal($senderRequest);
 	    	echo json_encode(array('response' => $return_param, 'status' => true));
         }else{
           	echo json_encode(array('response' => 'Invalid request.', 'status' => false));
         }
+	}else if($action == 'payment_form'){
+		$data = $_POST;
+
+		$city = $_POST['city'];
+		$country = $_POST['country'];
+		$address = $_POST['address'];
+		$zip = $_POST['zip'];
+		$state = $_POST['state'];
+
+		$email = $_POST['email'];
+		$name = $_POST['name'];
+		$phone = $_POST['phone'];
+		$crm_id = $_POST['crm_cus_id'];
+
+		$package_name = $_POST['package_name'];
+		$itemPrice = $_POST['total_price'];
+		$itemPrice = str_replace('$', '', $itemPrice);
+		$tokenid = $_POST['stripeToken'];
+		$itemPriceCents = round(((float)$itemPrice) * 100);
+
+		try {
+
+			$stripe = new \Stripe\StripeClient(STRIPE_SECRET);
+
+			$customer = $stripe->customers->create([
+				'name' => $name,
+				'email' => $email,
+				'phone' => $phone,
+				'source' => $tokenid
+			]);
+
+			$charge = $stripe->charges->create([
+				'amount' => $itemPriceCents,
+				'currency' => 'usd',
+				'customer' => $customer->id,
+				'description' => $package_name,
+				'receipt_email' => $email
+			]);
+			$chargeJson = $charge->jsonSerialize();
+			if ($chargeJson['amount_refunded'] == 0 && empty($chargeJson['failure_code']) && $chargeJson['paid'] == 1 && $chargeJson['captured'] == 1) {
+				$postRequest = array(
+					'name' => $name,
+					'email' => $email,
+					'phone' => $phone,
+					'package_name' => $package_name,
+					'amount' => $itemPrice,
+					'transaction_id' => $chargeJson['id'],
+					'payment_status' => $chargeJson['status'],
+					'crm_id' => $crm_id
+				);
+				$return_param = send_mail_to_admin($name, null, $email, $phone, null, null, 'Payment', null, null, ADMIN_EMAIL, $postRequest);
+				sendPaymentToTerminal($postRequest, $chargeJson);
+				echo json_encode(array('status' => true));
+			}
+		} catch (\Stripe\Exception\CardException $e) {
+			echo json_encode(array('status' => false, 'message' => $e->getError()->message));
+		} catch (\Stripe\Exception\RateLimitException $e) {
+			echo json_encode(array('status' => false, 'message' => $e->getError()->message));
+		} catch (\Stripe\Exception\InvalidRequestException $e) {
+			echo json_encode(array('status' => false, 'message' => $e->getError()->message));
+		} catch (\Stripe\Exception\AuthenticationException $e) {
+			echo json_encode(array('status' => false, 'message' => $e->getError()->message));
+		} catch (\Stripe\Exception\ApiConnectionException $e) {
+			echo json_encode(array('status' => false, 'message' => $e->getError()->message));
+		} catch (\Stripe\Exception\ApiErrorException $e) {
+			echo json_encode(array('status' => false, 'message' => $e->getError()->message));
+		} catch (Exception $e) {
+			echo json_encode(array('status' => false, 'message' => $e->getMessage()));
+		}
+	}
+
+	function sendPaymentToTerminal($postRequest, $chargeObject){
+		$postRequest['charge_object'] = json_encode($chargeObject);
+		$postRequest['stripe'] = STRIPE_KEY;
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, TERMINAL."api/submit-payment");
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $postRequest);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$headers = array(
+			"Accept: application/json",
+			"Authorization: " . TERMINAL_BRAND,
+			"custom-auth: " . TERMINAL_BRAND,
+		);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		$server_output = curl_exec($ch);
+		$data = json_decode($server_output, true);
+		curl_close($ch);
+		return $data;
+	}
+
+	function sendLogoFormToTerminal($senderRequest){
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, TERMINAL."api/logo-brief");
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $senderRequest);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$headers = array(
+			"Accept: application/json",
+			"Authorization: ". TERMINAL_BRAND,
+			"custom-auth: ". TERMINAL_BRAND,
+		);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		$server_output = curl_exec($ch);
+		$data = json_decode($server_output, true);
+		curl_close($ch);
+		return $data;
+	}
+
+	function sendLeadToTerminal($senderRequest){
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, TERMINAL."api/leads");
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $senderRequest);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$headers = array(
+			"Accept: application/json",
+			"Authorization: ". TERMINAL_BRAND,
+			"custom-auth: ". TERMINAL_BRAND,
+		);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		$server_output = curl_exec($ch);
+		$data = json_decode($server_output, true);
+		$_SESSION["crm_cus_id"] = $data['message'];
+		curl_close($ch);
+		return $data;
 	}
 
 	function insert_into_table($f_name, $l_name, $email, $number, $url, $domain, $subject, $conn, $services, $message){
