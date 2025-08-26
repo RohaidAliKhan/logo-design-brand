@@ -110,6 +110,14 @@ $(document).ready(function(){
 			    var domain = $(e).find('[name="domain"]').val();
 			    var subject = $(e).find('[name="subject"]').val();
 				var user_ip = $('#user_ip').val();
+				var get_form = "landing_page";
+				var form_type = ""; 
+				if ($(e).find('[name="get-form"]').length > 0) {
+					get_form = $(e).find('[name="get-form"]').val();
+					form_type = $(e).find('[name="form-type"]').val();
+					obj['package_name'] = $(e).find('[name="package_name"]').val();
+					obj['package_price'] = $(e).find('[name="package_price"]').val();
+				}
 			    var form = 0;
 			    if($(e).find('[name="form"]').length != 0){
 			        form = $(e).find('[name="form"]').val();
@@ -127,7 +135,7 @@ $(document).ready(function(){
 
 							$.ajax({
 								type: "POST",
-								url: '/includes/send_data.php?action=landing_page',
+								url: '/includes/send_data.php?action=' + get_form,
 								dataType: "json",
 								data: {name:name, email:email, phone:phone, message:message, url:url, domain:domain, subject:subject, optional:obj, form:form, user_ip:user_ip, recaptcha_token:token},
 								success: function(data){
@@ -144,7 +152,16 @@ $(document).ready(function(){
 											$(e).find('.success').html('<p class="mb-0 mt-0 pb-0">Thank you for filling out your information!</p>');
 											$(e).find('.success').show();
 										}
-										window.location.href = window.location.origin + "/thankyou.php";
+										if(get_form == 'landing_page'){
+											window.location.href = window.location.origin + "/thankyou.php";
+										}
+										if(get_form == 'order_form'){
+											if(form_type == 0){
+												window.location.href = window.location.origin + "/logo-brief/index.php?slug="+data.package_name;
+											}else{
+												window.location.href = window.location.origin + "/payment/index.php?slug="+data.package_name;
+											}
+										}
 
 									}else{
 										$(e).find('.error').html('Error Occurred');

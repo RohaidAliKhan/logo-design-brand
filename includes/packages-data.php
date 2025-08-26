@@ -7,6 +7,7 @@ $packages = [
             "discount" => 29,
             "price" => 59,
             "old_price" => 88,
+            "form_id" => 0,
             "features" => [
                 "4 Original Logo Concepts",
                 "2 Dedicated Logo Designer",
@@ -28,6 +29,7 @@ $packages = [
             "discount" => 91,
             "price" => 199,
             "old_price" => 290,
+            "form_id" => 0,
             "features" => [
                 "12 Original Logo Concepts",
                 "4 Dedicated Logo Designer (Industry Specific)",
@@ -52,6 +54,7 @@ $packages = [
             "discount" => 91,
             "price" => 399,
             "old_price" => 490,
+            "form_id" => 0,
             "features" => [
                 "Unlimited Original Logo Concepts",
                 "8 Dedicated Logo Designer (Industry Specific)",
@@ -79,6 +82,7 @@ $packages = [
             "discount" => 239,
             "price" => 449,
             "old_price" => 688,
+            "form_id" => 2,
             "features" => [
                 "3 Page Website",
                 "2 Dedicated Logo Designer",
@@ -100,6 +104,7 @@ $packages = [
             "discount" => 189,
             "price" => 899,
             "old_price" => 1088,
+            "form_id" => 2,
             "features" => [
                 "5 Page Website",
                 "Custom Layout Design",
@@ -129,6 +134,7 @@ $packages = [
             "discount" => 189,
             "price" => 1499,
             "old_price" => 1688,
+            "form_id" => 2,
             "features" => [
                 "Up to 10 Unique Pages Website",
                 "CMS / Admin Panel Integration",
@@ -162,6 +168,7 @@ $packages = [
             "discount" => 99,
             "price" => 1199,
             "old_price" => 1298,
+            "form_id" => 3,
             "features" => [
                 "E-Commerce Website Design and Development",
                 "Customized Theme Based Design",
@@ -199,6 +206,7 @@ $packages = [
             "discount" => 99,
             "price" => 1699,
             "old_price" => 1798,
+            "form_id" => 3,
             "features" => [
                 "E-Commerce Website Design and Development",
                 "Customized Tailor-Made Design",
@@ -239,6 +247,7 @@ $packages = [
             "discount" => 199,
             "price" => 2499,
             "old_price" => 2698,
+            "form_id" => 3,
             "features" => [
                 "E-Commerce Website Design and Development",
                 "Customized Tailor-Made Design",
@@ -292,6 +301,7 @@ $packages = [
             "discount" => 500,
             "price" => 1499,
             "old_price" => 1999,
+            "form_id" => 4,
             "features" => [
                 "Website Design" => [
                     "Pages: 8 Template-Based (*Additional charges for Unique Custom Design Pages)",

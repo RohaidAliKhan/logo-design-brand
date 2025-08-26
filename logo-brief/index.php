@@ -1,10 +1,35 @@
-﻿<?php include '../includes/header.php' ?>
-<meta name="description" content="Best Web Design Agency located in Dallas Taxes offers web, logo, digital marketing, stationery services. Hire professional web designers now!">
+﻿<?php include '../order-includes/header.php' ?>
+<?php
+    $slug = $_GET['slug'] ?? null;
+    if (empty($slug)) {
+        header("Location: /");
+        exit;
+    }
+    $packageDetails = null;
+    foreach ($packages as $categoryName => $categoryPackages) {
+        if (isset($categoryPackages[$slug])) {
+            $packageDetails = $categoryPackages[$slug];
+            $packageDetails['category'] = $categoryName; // optional
+            break;
+        }
+    }
+    if (!$packageDetails) {
+        header("Location: /");
+        exit;
+    }
+    session_start();
+    if (empty($_SESSION['name'])) {
+        header("Location: /");
+        exit;
+    }
+?>
+    <title>Logo Form | <?php echo $packageDetails['title']; ?></title>
+    <meta name="description" content="Best Web Design Agency located in Dallas Taxes offers web, logo, digital marketing, stationery services. Hire professional web designers now!">
 </head>
 
 <body class="mainbody">
     <div class="commented-container">
-        <?php include '../includes/menu.php' ?>
+        <?php include '../order-includes/menu.php' ?>
         <section class="page-title">
             <div class="container">
                 <h1>Let's Get Started with Your Project</h1>
@@ -48,55 +73,55 @@
                                                     <ul class="list-inline">
                                                         <li>
                                                             <i>
-                                                                <img selected="0" class="bordr" src="../assets/order/sony-e-log.jpg" width="151" height="151" alt="">
+                                                                <img selected="0" class="bordr" src="../order-assets/img/sony-e-log.jpg" width="151" height="151" alt="">
                                                             </i>
                                                             <p>high-tech</p>
                                                         </li>
                                                         <li>
                                                             <i>
-                                                                <img selected="0" class="bordr" src="../assets/order/anderoid-pic.jpg" width="151" height="151" alt="">
+                                                                <img selected="0" class="bordr" src="../order-assets/img/anderoid-pic.jpg" width="151" height="151" alt="">
                                                             </i>
                                                             <p>minimalist</p>
                                                         </li>
                                                         <li>
                                                             <i>
-                                                                <img selected="0" class="bordr" src="../assets/order/cola-pic.jpg" width="151" height="151" alt="">
+                                                                <img selected="0" class="bordr" src="../order-assets/img/cola-pic.jpg" width="151" height="151" alt="">
                                                             </i>
                                                             <p>typography</p>
                                                         </li>
                                                         <li>
                                                             <i>
-                                                                <img selected="0" class="bordr" src="../assets/order/mico-pic.jpg" width="151" height="151" alt="">
+                                                                <img selected="0" class="bordr" src="../order-assets/img/mico-pic.jpg" width="151" height="151" alt="">
                                                             </i>
                                                             <p>corporate</p>
                                                         </li>
                                                         <li>
                                                             <i>
-                                                                <img selected="0" class="bordr" src="../assets/order/kfc-log.jpg" width="151" height="151" alt="">
+                                                                <img selected="0" class="bordr" src="../order-assets/img/kfc-log.jpg" width="151" height="151" alt="">
                                                             </i>
                                                             <p>illustrative</p>
                                                         </li>
                                                         <li>
                                                             <i>
-                                                                <img selected="0" class="bordr" src="../assets/order/gn-lo.jpg" width="151" height="151" alt="">
+                                                                <img selected="0" class="bordr" src="../order-assets/img/gn-lo.jpg" width="151" height="151" alt="">
                                                             </i>
                                                             <p>initials</p>
                                                         </li>
                                                         <li>
                                                             <i>
-                                                                <img selected="0" class="bordr" src="../assets/order/fanta-log.jpg" width="151" height="151" alt="">
+                                                                <img selected="0" class="bordr" src="../order-assets/img/fanta-log.jpg" width="151" height="151" alt="">
                                                             </i>
                                                             <p>fun</p>
                                                         </li>
                                                         <li>
                                                             <i>
-                                                                <img selected="0" class="bordr" src="../assets/order/egale-log.jpg" width="151" height="151" alt="">
+                                                                <img selected="0" class="bordr" src="../order-assets/img/egale-log.jpg" width="151" height="151" alt="">
                                                             </i>
                                                             <p>sporty</p>
                                                         </li>
                                                         <li>
                                                             <i>
-                                                                <img selected="0" class="bordr" src="../assets/order/porch-log.jpg" width="151" height="151" alt="">
+                                                                <img selected="0" class="bordr" src="../order-assets/img/porch-log.jpg" width="151" height="151" alt="">
                                                             </i>
                                                             <p>shield</p>
                                                         </li>
@@ -162,17 +187,18 @@
                         </ul>
                         <div class="boxpackages">
                             <div class="packheads">
-                                <div class="productSku" style="display: none;">LOGO_SPECIAL_PACKAGE</div>
-                                <h3 class="montfont packageName"></h3>
+                                <h3 class="montfont packageName"><?php echo $packageDetails['title']; ?></h3>
                             </div>
                             <div class="packdetails">
                                 <div class="packtitles">
                                     <div class="fleft">
-                                        <h3 class="opensansfont packagePrice"></h3>
+                                        <h3 class="opensansfont packagePrice">$<?php echo $packageDetails['price']; ?></h3>
                                     </div>
                                 </div>
                                 <ul class="packageDescription">
-
+                                    <?php foreach ($packageDetails['features'] as $feature): ?>
+                                    <li><?php echo $feature; ?></li>
+                                    <?php endforeach; ?>
                                 </ul>
                                 <div class="botarea-pack">
                                     <div class="liovechats-bx">
@@ -188,7 +214,7 @@
                 </div>
             </div>
         </section>
-        <?php include '../includes/footer.php' ?>
+        <?php include '../order-includes/footer.php' ?>
     </div>
 </body>
 

@@ -47,7 +47,7 @@
                         <p>Want To Discuss ?</p>
                     </div>
                     <div class="pricing_btn-info">
-                        <button value="$<?php echo $package['price']; ?>" class="primary-button_btn">Order Now</button>
+                        <a href="/order" value="$<?php echo $package['price']; ?>" class="primary-button_btn">Order Now</a>
                         <a class="primary-button_btn" href="portfolio.php">View Portfolio</a>
                     </div>
                     <div class="pricing_right-side">
@@ -78,7 +78,7 @@
                 </ul>
             </div>
             <div class="pricing_btn-info">
-                <button value="$<?php echo $package['price']; ?>" class="primary-button_btn">Order Now</button>
+                <a href="/order/index.php?slug=<?php echo $slug; ?>" value="$<?php echo $package['price']; ?>" class="primary-button_btn">Order Now</a>
                 <a class="primary-button_btn" href="portfolio.php">View Portfolio</a>
             </div>
         </div>

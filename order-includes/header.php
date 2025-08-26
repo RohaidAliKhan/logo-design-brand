@@ -1,11 +1,6 @@
 <?php
-if (file_exists(dirname(__FILE__) . '/../includes/config.php')) {
-    include(dirname(__FILE__) . '/../includes/config.php');
-} elseif (file_exists(dirname(__FILE__) . '/includes/config.php')) {
-    include(dirname(__FILE__) . '/includes/config.php');
-} else {
-    include('../../includes/config.php');
-}
+    include '../includes/config.php';
+    include '../includes/packages-data.php';
 ?>
 
 <!DOCTYPE html>
@@ -29,8 +24,6 @@ if (file_exists(dirname(__FILE__) . '/../includes/config.php')) {
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css">
-    <link rel="stylesheet" href="../assets/css/lib.css" type="text/css" />
-    <link rel="stylesheet" href="../assets/css/app.css?v=0.4" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../order-page.css">
-    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png" />
+    <link rel="stylesheet" href="../order-assets/css/order-page.css">
+    <link rel="icon" href="../assets/images/favicon.ico">

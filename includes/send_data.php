@@ -31,16 +31,28 @@
     
 	$action = $_GET['action'];
 	if($action == 'order_form'){
-		$f_name = $_POST['f_name'];
-		$l_name = $_POST['l_name'];
+		$name = $_POST['name'];
 		$email = $_POST['email'];
-		$number = $_POST['number'];
+		$number = $_POST['phone'];
 		$url = $_POST['url'];
 		$domain = $_POST['domain'];
 		$subject = $_POST['subject'];
-		$return_table = insert_into_table($f_name, $l_name, $email, $number, $url, $domain, $subject, $conn, null, null);
-		$return_param = send_mail_to_admin($f_name, $l_name, $email, $number, $url, $domain, $subject, null, null, ADMIN_EMAIL, null);
-		echo json_encode(array('response' => $return_param, 'response_table' => $return_table));
+
+		$_SESSION['name'] = $name;
+		$_SESSION['email'] = $email;
+		$_SESSION['phone'] = $number;
+		$_SESSION['package_name'] = $_POST['optional']['package_name'];
+		$_SESSION['package_price'] = $_POST['optional']['package_price'];
+
+		if(isset($_POST['optional'])){
+			$optional = $_POST['optional'];
+		}else{
+			$optional = null;
+		}
+		
+		// $return_table = insert_into_table($f_name, $l_name, $email, $number, $url, $domain, $subject, $conn, null, null);
+		$return_param = send_mail_to_admin($name, null, $email, $number, $url, $domain, $subject, null, null, ADMIN_EMAIL, $optional);
+		echo json_encode(array('response' => $return_param, 'package_name' => $_POST['optional']['package_name']));
 	}else if($action == 'form_submission'){
 		$name = $_POST['name'];
 		$email = $_POST['email'];
@@ -589,7 +601,7 @@
 		$to = ADMIN_EMAIL;
 		$subject = $subject;
 		$from = $email;
-		$optional = json_encode($optional);
+		// $optional = json_encode($optional);
 		$rows = "<tr><td class='label'>First Name:</td><td class='value'>{$f_name}</td></tr>";
 
 		if (!empty($l_name)) {
@@ -601,9 +613,22 @@
 		<tr><td class='label'>Number:</td><td class='value'>{$number}</td></tr>
 		<tr><td class='label'>URL:</td><td class='value'>{$url}</td></tr>
 		<tr><td class='label'>Domain:</td><td class='value'>{$domain}</td></tr>
-		<tr><td class='label'>Service:</td><td class='value'>{$services}</td></tr>
-		<tr><td class='label'>Message:</td><td class='value'>{$param_message}</td></tr>
-		<tr><td class='label'>Optional:</td><td class='value'>{$optional}</td></tr>";
+		";
+
+		if (!empty($services)) {
+			$rows .= "<tr><td class='label'>Service:</td><td class='value'>{$services}</td></tr>";
+		}
+
+		if (!empty($param_message)) {
+			$rows .= "<tr><td class='label'>Message:</td><td class='value'>{$param_message}</td></tr>";
+		}
+
+		if (!empty($optional) && is_array($optional)) {
+			foreach ($optional as $key => $value) {
+				$label = ucwords(str_replace("_", " ", $key));
+				$rows .= "<tr><td class='label'>{$label}:</td><td class='value'>{$value}</td></tr>";
+			}
+		}
 
 		// Build HTML Email Template
 		$message = "
@@ -695,8 +720,7 @@
 			URL: $url
 			Domain: $domain
 			Service: $services
-			Message: $param_message
-			Optional: $optional";
+			Message: $param_message";
 
 			$mail->send();
 		} catch (Exception $e) {
