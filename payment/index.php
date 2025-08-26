@@ -67,16 +67,16 @@
                                 <ul>
                                     <li>
                                         <label>DESCRIPTION </label>
-                                        <input type="text" placeholder="" readonly="" id="pname" value="">
+                                        <input type="text" placeholder="" readonly="" id="pname" value="<?php echo $packageDetails['title']; ?>">
                                     </li>
                                     <li>
                                         <label>Amount: USD </label>
-                                        <input type="text" placeholder="" id="pprice" readonly="" value="">
+                                        <input type="text" placeholder="" id="pprice" readonly="" value="$<?php echo $packageDetails['price']; ?>">
                                     </li>
                                     <hr>
                                     <li>
                                         <label>NAME <span class="req-field-star">*</span></label>
-                                        <input type="text" data-validation="required" id="txtName" name="cn" placeholder="" required>
+                                        <input type="text" id="txtName" name="cn" placeholder="" value="<?php echo $_SESSION['name'] ?>" required>
                                     </li>
                                     <li>
                                         <label>COUNTRY <span class="req-field-star">*</span></label>
@@ -353,11 +353,11 @@
                                     </li>
                                     <li>
                                         <label>Telephone <span class="req-field-star">*</span></label>
-                                        <input type="text" data-validation="required" readonly="" name="phone" placeholder="" id="txtPhoneNumber" maxlength="10" onkeyup="javascript: this.value = this.value.replace(/[^0-9]/g,'');" required>
+                                        <input type="text" value="<?php echo $_SESSION['phone'] ?>" readonly="" name="phone" placeholder="" id="txtPhoneNumber" maxlength="10" onkeyup="javascript: this.value = this.value.replace(/[^0-9]/g,'');" required>
                                     </li>
                                     <li>
                                         <label>EMAIL <span class="req-field-star">*</span></label>
-                                        <input type="text" data-validation="required" readonly="" name="email" placeholder="" id="txtEmailAddress" required>
+                                        <input type="text" value="<?php echo $_SESSION['email'] ?>" readonly="" name="email" placeholder="" id="txtEmailAddress" required>
                                     </li>
                                     <hr>
                                     <img class="img-responsive in-block" src="../order-assets/img/visa.png" style="text-align: center;margin: 0 auto;">
@@ -428,17 +428,18 @@
                         </ul>
                         <div class="boxpackages">
                             <div class="packheads">
-                                <div class="productSku" style="display: none;">LOGO_SPECIAL_PACKAGE</div>
-                                <h3 class="montfont packageName"></h3>
+                                <h3 class="montfont packageName"><?php echo $packageDetails['title']; ?></h3>
                             </div>
                             <div class="packdetails">
                                 <div class="packtitles">
                                     <div class="fleft">
-                                        <h3 class="opensansfont packagePrice"></h3>
+                                        <h3 class="opensansfont packagePrice">$<?php echo $packageDetails['price']; ?></h3>
                                     </div>
                                 </div>
                                 <ul class="packageDescription">
-
+                                    <?php foreach ($packageDetails['features'] as $feature): ?>
+                                    <li><?php echo $feature; ?></li>
+                                    <?php endforeach; ?>
                                 </ul>
                                 <div class="botarea-pack">
                                     <div class="liovechats-bx">
