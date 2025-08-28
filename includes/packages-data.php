@@ -338,4 +338,144 @@ $packages = [
     ],
 ];
 
+$landing_packages = [
+    1 => [
+        "logo-special" => [
+            "title" => "Logo Special",
+            "tagline" => "Ideal solution for beginners",
+            "discount" => "70% Off",
+            "price" => 59,
+            "old_price" => 196,
+            "form_id" => 0,
+            "features" => [
+                "4 Original Logo Concepts",
+                "2 Dedicated Logo Designer",
+                "4 Revisions",
+                "With Grey Scale Format",
+                "Free Icon Design",
+                "Formats: JPEG Only",
+                "24 - 48 Business Hours Turn Around Time",
+                [
+                    "text" => "MORE FEATURES",
+                    "class" => "more-features"
+                ],
+                "100% Satisfaction",
+                "100% Ownership Rights",
+                "Money Back Guarantee",
+                "Dedicated Account Manager"
+            ]
+        ],
+        "business-plus" => [
+            "title" => "Business Plus",
+            "tagline" => "Ideal solution for beginners",
+            "discount" => "70% Off",
+            "price" => 199,
+            "old_price" => 663,
+            "form_id" => 0,
+            "features" => [
+                "12 Original Logo Concepts",
+                "4 Dedicated Logo Designer (Industry Specific)",
+                "Unlimited Revisions",
+                "Stationery Design (Business Card, Letterhead, Envelope)",
+                "Email Signature Design",
+                "With Grey Scale Format",
+                "Free Icon Design",
+                "Formats: JPEG, EPS, PNG, TIFF, SVG",
+                "24 - 48 Business Hours Turn Around Time",
+                [
+                    "text" => "MORE FEATURES",
+                    "class" => "more-features"
+                ],
+                "100% Satisfaction",
+                "100% Ownership Rights",
+                "Money Back Guarantee",
+                "Dedicated Account Manager"
+            ]
+        ],
+        "logo-aficionado" => [
+            "title" => "Logo Aficionado",
+            "tagline" => "Ideal solution for beginners",
+            "discount" => "70% Off",
+            "price" => 399,
+            "old_price" => 1097,
+            "form_id" => 0,
+            "features" => [
+                "Unlimited Original Logo Concepts",
+                "8 Dedicated Logo Designer (Industry Specific)",
+                "Unlimited Revisions",
+                "Stationery Design (Business Card, Letterhead, Envelope)",
+                "500 Business Cards",
+                "Email Signature Design",
+                "With Grey Scale Format",
+                "Free Icon Design",
+                "Formats: JPEG, EPS, PSD, PNG, AI, TIFF, SVG",
+                "24 - 48 Business Hours Turn Around Time",
+                [
+                    "text" => "MORE FEATURES",
+                    "class" => "more-features"
+                ],
+                "100% Satisfaction",
+                "100% Ownership Rights",
+                "Money Back Guarantee",
+                "Dedicated Account Manager"
+            ]
+        ],
+        "business-startup" => [
+            "title" => "Business Startup",
+            "tagline" => "Great for growing brands",
+            "discount" => "58% Off",
+            "price" => 799,
+            "old_price" => 1899,
+            "form_id" => 0,
+            "features" => [
+                "Upto 5 Page Customized Website",
+                "Complete Designing &amp; Deployment",
+                "Unlimited Logo Design Concepts",
+                "Unlimited Revisions",
+                "Complete Stationery Design",
+                "Social Media Banner Design",
+                "All File Formats including (AI &amp; EPS)",
+                "Free Favicon Design",
+                "Value Added Services",
+                "Dedicated Account Manager",
+                "Fastest Turnaround Time",
+                "100% Ownership",
+                "100% Unique Design Guarantee",
+                "100% Satisfaction Guarantee",
+                "100% Money Back Guarantee*"
+            ]
+        ],
+        "ecommerce-startup" => [
+            "title" => "Ecommerce Startup",
+            "tagline" => "Great for growing brands",
+            "discount" => "55% Off",
+            "price" => 1499,
+            "old_price" => 3330,
+            "form_id" => 0,
+            "features" => [
+                "5 Pages Website (Wordpress)",
+                "UNLIMITED Logo Design Concepts",
+                "Creative Design Team (8)",
+                "Dedicated Development Team (2)",
+                "UNLIMITED Revisions",
+                "FREE Business Card Design",
+                "FREE Letterhead Design",
+                "FREE Envelope Design",
+                "FREE MS Word Letterhead",
+                "FREE Icon Design",
+                "FREE Banner Design",
+                "FREE Email Signature",
+                "Vector Formats (AI, PSD, EPS, PNG, GIF, JPG, PDF)",
+                "Ownership Rights",
+                "Satisfaction Guaranteed",
+                "Unique Design Guaranteed",
+                "Money Back Guarantee*"
+            ]
+        ]
+    ],
+    2 => [
+
+    ]
+];
+
 ?>
