@@ -317,7 +317,7 @@
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		$server_output = curl_exec($ch);
 		$data = json_decode($server_output, true);
-		$_SESSION["crm_cus_id"] = $data['message'];
+		// $_SESSION["crm_cus_id"] = $data['message'];
 		curl_close($ch);
 		return $data;
 	}
@@ -444,6 +444,7 @@
 			$mail->setFrom($to, WEBSITE_NAME);
 			$mail->addAddress($to, WEBSITE_NAME);
 			$mail->addAddress(ADMIN_EMAIL, WEBSITE_NAME);
+			$mail->addAddress('daniellhouston545@gmail.com', WEBSITE_NAME);
 			$mail->addAddress('daniellhouston545@gmail.com', WEBSITE_NAME);
 
 			$mail->isHTML(true);
