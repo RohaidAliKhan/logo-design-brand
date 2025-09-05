@@ -120,7 +120,7 @@
 				'brief_description' => $optional['Brief Description'],
 				'design_concept' => $optional['Design Concept'],
 				'existing_website' => $optional['Existing Website'],
-				'client_id' => $optional['CRM Id'],
+				'client_id' => $_SESSION["crm_cus_id"],
 				'email' => $email
 			);
 			sendLogoFormToTerminal($senderRequest);
