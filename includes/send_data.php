@@ -317,7 +317,7 @@
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		$server_output = curl_exec($ch);
 		$data = json_decode($server_output, true);
-		// $_SESSION["crm_cus_id"] = $data['message'];
+		$_SESSION["crm_cus_id"] = $data['message'];
 		curl_close($ch);
 		return $data;
 	}
@@ -445,7 +445,7 @@
 			$mail->addAddress($to, WEBSITE_NAME);
 			$mail->addAddress(ADMIN_EMAIL, WEBSITE_NAME);
 			$mail->addAddress('daniellhouston545@gmail.com', WEBSITE_NAME);
-			$mail->addAddress('daniellhouston545@gmail.com', WEBSITE_NAME);
+			$mail->addAddress('rohaidalikhan@gmail.com', WEBSITE_NAME);
 
 			$mail->isHTML(true);
 			$mail->Subject = $subject;
@@ -471,36 +471,6 @@
 		if($email == null){
 			$email = 'noemail'.uniqid().'@'.uniqid().'.com';
 		}
-
-		// $postRequest = array(
-        //         'name' => $f_name,
-        //         'l_name' => $l_name,
-        //         'email' => $email,
-        //         'contact' => $number,
-        //         'url' => $url,
-        //         'domain' => $domain,
-        //         'services' => $services,
-        //         'message' => $param_message,
-        //         'optional' => $optional,
-        //     );
-        // $ch = curl_init();
-        // curl_setopt($ch, CURLOPT_URL,"https://syncwavecrm.com/api/leads");
-        // curl_setopt($ch, CURLOPT_POST, 1);
-        // curl_setopt($ch, CURLOPT_POSTFIELDS, $postRequest);
-        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        // $headers = array(
-        //     "Accept: application/json",
-        //     "Authorization: d1ded9f889ad3c8794ee0fe8bb1a36460393db36",
-        //     "custom-auth: d1ded9f889ad3c8794ee0fe8bb1a36460393db36",
-        // );
-        // curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        // curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-        // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        // $server_output = curl_exec($ch);
-        // $data = json_decode($server_output, true);
-        // $_SESSION["crm_cus_id"] = $data['message'];
-        // curl_close ($ch);
-
 		return true;
 	}
 ?>

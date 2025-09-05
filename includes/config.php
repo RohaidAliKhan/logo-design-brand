@@ -27,7 +27,7 @@ define('GOOGLE_RECAPTCHA_SITE_KEY', "6LfMIK8rAAAAAN1fQCiL955v7EHyBUBs-NeVMWSd");
 define('GOOGLE_RECAPTCHA_SECRET_KEY', "6LfMIK8rAAAAAKhkNzfulhETF-__lWVaSd-9yjyZ");
 // define('TERMINAL', "http://127.0.0.1:8000/");
 define('TERMINAL', "https://terminal.tech-deck.co/");
-define('TERMINAL_BRAND', "688a966729839");
+define('TERMINAL_BRAND', "68ba2bf8d5e01");
 define('STRIPE_SECRET', 'sk_test_tufroxQif3WXYBXnpE7654Lc00ELByYsKj');
 define('STRIPE_KEY', 'pk_test_lkMq1Om8KnexFcuPpAlxrbxe00pfcOxxvr');
 
