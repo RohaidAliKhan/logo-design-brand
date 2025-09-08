@@ -1079,9 +1079,15 @@
                     </div>
                 </div>
                 <div class="col-md-6 wow fadeInRight" data-wow-delay="0.5s" data-form-type="signup_form">
-                    <form class="form_style popup_form_style input leadForm" method="post" enctype="multipart/form-data" action="javascript:void(0)">
-                        <input id="formType" name="formType" type="hidden">
-                        <input id="referer" name="referer" type="hidden">
+                    <form class="form_style popup_form_style input leadForm form_submission" method="post" enctype="multipart/form-data" action="javascript:void(0)" data-recaptcha="<?php echo GOOGLE_RECAPTCHA_SITE_KEY; ?>">
+                        <input type="hidden" name="get-form" value="order_form">
+                        <input type="hidden" name="form-type" value="<?php echo $landing_packages[1]['logo-special']['form_id'] ?? ''; ?>">
+                        <input type="hidden" name="url" value="<?php echo htmlspecialchars(CURRENT_URL, ENT_QUOTES, 'UTF-8'); ?>">
+                        <input type="hidden" name="domain" value="www.<?php echo WEBSITE_LINK ?>">
+                        <input type="hidden" name="subject" value="Landing Page Form (www.<?php echo WEBSITE_LINK ?>)">
+                        <input type="hidden" name="package_name" value="logo-special">
+                        <input type="hidden" name="package_price" value="$59">
+                        <input type="hidden" name="landing_page" value="1">
                         <div class="contactSec-form">
                             <h6>Fill Out the Form Below</h6>
 
@@ -1089,34 +1095,36 @@
                                 <div class="col-md-12">
                                     <div class="contactSec-fFeild">
                                         <label for="name">Name</label>
-                                        <input type="text" placeholder="Type Full Name" id="name" name="name">
+                                        <input type="text" placeholder="Type Full Name" id="name" name="cn">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="contactSec-fFeild">
                                         <label for="email">Email</label>
-                                        <input type="text" placeholder="pat@shuffle.dev" id="email" name="email">
+                                        <input type="text" placeholder="pat@shuffle.dev" id="email" name="em">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="contactSec-fFeild">
                                         <label for="phone">Phone Number</label>
-                                        <input type="text" placeholder="Phone" id="phone" name="phone">
+                                        <input type="text" placeholder="Phone" id="phone" name="pn">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="contactSec-fFeild">
                                         <label for="message">Message</label>
-                                        <textarea name="customers_meta[mesage]" id="message"></textarea>
+                                        <textarea name="msg" id="message"></textarea>
                                     </div>
                                 </div>
-
                                 <div class="col-md-12">
                                     <div class="contactSec-fBtn">
                                         <button>Submit</button>
-                                        <div class="popFormResult" id="formResult"></div>
+                                        <div class="error mt-3 alert alert-danger text-left mb-0" style="display: none"></div>
+                                        <div class="loader" style="display: none">
+                                        <img alt="loader" src="/loader.gif">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1210,63 +1218,50 @@
 
             <div class="col-md-6 ps-0">
                 <div class="popup-rightSec" data-form-type="ordernow_form">
-                    <form class="leadFormWithOrder has-validation-callback" method="post" enctype="multipart/form-data" action="javascript:void(0)">
-                         <input type="hidden" id="formType" name="formType">
-                            <input type="hidden" id="referer" name="referer">
-                            <input type="hidden" id="package_sku" value="LOGO_SPECIAL_PACKAGE">
-                            <input type="hidden" id="price" value="35.00">
-                            <input type="hidden" id="priceText" value="$35.00">
-                            <input type="hidden" id="title" value="Logo Special">
-                            <input type="hidden" id="package-id" value="7643">
-                            <div id="html_description" class="d-none">
-                                <ul>
-    <li>4 Original Logo Concepts</li>
-    <li> 2 Dedicated Logo Designer</li>
-    <li> 4 Revisions</li>
-    <li> With Grey Scale Format</li>
-    <li> Free Icon Design</li>
-    <li> Formats: JPEG Only</li>
-    <li> 24 - 48 Business Hours Turn Around Time</li>
-    <li class="features">MORE FEATURES</li>
-    <li> 100% Satisfaction</li>
-    <li> 100% Ownership Rights</li>
-    <li> Money Back Guarantee</li>
-    <li> Dedicated Account Manager</li>
-</ul>
-                            </div>
-                            <input type="hidden" id="promotionId" value="992">
+                    <form class="leadFormWithOrder has-validation-callback form_submission" method="post" enctype="multipart/form-data" action="javascript:void(0)" data-recaptcha="<?php echo GOOGLE_RECAPTCHA_SITE_KEY; ?>">
+                        <input type="hidden" name="get-form" value="order_form">
+                        <input type="hidden" name="form-type" value="<?php echo $landing_packages[1]['logo-special']['form_id'] ?? ''; ?>">
+                        <input type="hidden" name="url" value="<?php echo htmlspecialchars(CURRENT_URL, ENT_QUOTES, 'UTF-8'); ?>">
+                        <input type="hidden" name="domain" value="www.<?php echo WEBSITE_LINK ?>">
+                        <input type="hidden" name="subject" value="Landing Page Form (www.<?php echo WEBSITE_LINK ?>)">
+                        <input type="hidden" name="package_name" value="logo-special">
+                        <input type="hidden" name="package_price" value="$59">
+                        <input type="hidden" name="landing_page" value="1">
                         <div class="row rowGap">
                             <div class="col-md-12">
                                 <div class="popup-field">
                                     <label for="">Name</label>
-                                    <input type="text" name="name" required="">
+                                    <input type="text" name="cn" required="">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="popup-field">
                                     <label for="">Email</label>
-                                    <input type="text" name="email" required="">
+                                    <input type="text" name="em" required="">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="popup-field">
                                     <label for="">Phone Number</label>
-                                    <input type="text" name="phone" required="">
+                                    <input type="text" name="pn" required="">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="popup-field">
                                     <label for="">Message</label>
-                                    <input type="text" name="message">
+                                    <input type="text" name="msg">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <button>Get Started</button>
-                                <div class="popFormResult" id="formResult"></div>
+                                <div class="error mt-3 alert alert-danger text-left mb-0" style="display: none"></div>
+                                <div class="loader" style="display: none">
+                                <img alt="loader" src="/loader.gif">
+                                </div>
                             </div>
 
                         </div>
