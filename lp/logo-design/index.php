@@ -1,10 +1,8 @@
 ﻿<?php include '../../includes/config.php'; ?>
 <?php include '../../includes/packages-data.php'; ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -143,31 +141,15 @@
                 </div>
 
                 <div class="mainBanner-form wow fadeInDown" data-wow-delay="0.6s" data-form-type="ordernow_form">
-                    <form class="leadFormWithOrder has-validation-callback" method="post" enctype="multipart/form-data" action="javascript:void(0)">
-                         <input type="hidden" id="formType" name="formType">
-                            <input type="hidden" id="referer" name="referer">
-                            <input type="hidden" id="package_sku" value="LOGO_SPECIAL_PACKAGE">
-                            <input type="hidden" id="price" value="35.00">
-                            <input type="hidden" id="priceText" value="$35.00">
-                            <input type="hidden" id="title" value="Logo Special">
-                            <input type="hidden" id="package-id" value="7643">
-                            <div id="html_description" class="d-none">
-                                <ul>
-    <li>4 Original Logo Concepts</li>
-    <li> 2 Dedicated Logo Designer</li>
-    <li> 4 Revisions</li>
-    <li> With Grey Scale Format</li>
-    <li> Free Icon Design</li>
-    <li> Formats: JPEG Only</li>
-    <li> 24 - 48 Business Hours Turn Around Time</li>
-    <li class="features">MORE FEATURES</li>
-    <li> 100% Satisfaction</li>
-    <li> 100% Ownership Rights</li>
-    <li> Money Back Guarantee</li>
-    <li> Dedicated Account Manager</li>
-</ul>
-                            </div>
-                            <input type="hidden" id="promotionId" value="992">
+                    <form class="form_submission" method="post" enctype="multipart/form-data" action="javascript:void(0)" data-recaptcha="<?php echo GOOGLE_RECAPTCHA_SITE_KEY; ?>">
+                        <input type="hidden" name="get-form" value="order_form">
+                        <input type="hidden" name="form-type" value="<?php echo $landing_packages[1]['logo-special']['form_id'] ?? ''; ?>">
+                        <input type="hidden" name="url" value="<?php echo htmlspecialchars(CURRENT_URL, ENT_QUOTES, 'UTF-8'); ?>">
+                        <input type="hidden" name="domain" value="www.<?php echo WEBSITE_LINK ?>">
+                        <input type="hidden" name="subject" value="Landing Page Form (www.<?php echo WEBSITE_LINK ?>)">
+                        <input type="hidden" name="package_name" value="logo-special">
+                        <input type="hidden" name="package_price" value="$59">
+                        <input type="hidden" name="landing_page" value="1">
                         <div class="mainBanner-formMain">
                             <div class="mainBanner-formFeild">
                                 <div class="icon">
@@ -178,7 +160,7 @@
                                     </svg>
                                 </div>
 
-                                <input type="text" placeholder="Full Name" name="name" required="">
+                                <input type="text" placeholder="Full Name" name="cn" required="">
                             </div>
 
                             <div class="mainBanner-formFeild">
@@ -192,7 +174,7 @@
                                     </svg>
                                 </div>
 
-                                <input type="email" placeholder="Email Address" name="email" required="">
+                                <input type="email" placeholder="Email Address" name="em" required="">
                             </div>
 
                             <div class="mainBanner-formFeild border-end-0">
@@ -204,13 +186,12 @@
                                     </svg>
                                 </div>
 
-                                <input type="text" placeholder="Phone Number" name="phone" required="">
+                                <input type="text" placeholder="Phone Number" name="pn" required="">
                             </div>
 
                             <div class="mainBanner-formBtn">
                                 <button class="pulse">
                                     Let's Get Started
-
                                     <div class="icon">
                                         <svg width="31" height="29" viewbox="0 0 31 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <ellipse cx="14.9569" cy="14.5" rx="14.9569" ry="14.5" transform="matrix(-1 0 0 1 30.6914 0)" fill="white"></ellipse>
@@ -220,8 +201,11 @@
                                         </svg>
                                     </div>
                                 </button>
-                                <div class="popFormResult" id="formResult"></div>
                             </div>
+                        </div>
+                        <div class="error mt-3 alert alert-danger text-left mb-0" style="display: none"></div>
+                        <div class="loader" style="display: none">
+                           <img alt="loader" src="/loader.gif">
                         </div>
                     </form>
                 </div>
@@ -230,7 +214,6 @@
                     <div class="img">
                         <img loading="lazy" src="assets/lp/lp2/images/banner/awards.webp" alt="Awards Icon">
                     </div>
-
                     <div class="cont">
                         <span>
                             <em>
@@ -1300,13 +1283,9 @@
         new WOW().init();
     </script>
     <script src="assets/js/lazysizes.js"></script>
-    <script src="assets/js/web-workers/backend/web-worker-backend.js" type="text/javascript"></script>
     <script src="assets/js/lazyload-background.js" type="text/javascript"></script>
-    <script src="assets/js/socketPackage/socket.io.js" type="text/javascript"></script>
-    <script src="assets/js/socketPackage/socket.js" type="text/javascript"></script>
-    <script src="assets/js/socketPackage/online-offline.js" type="text/javascript"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=<?php echo GOOGLE_RECAPTCHA_SITE_KEY; ?>" async defer></script>
-    <script src="assets/js/form_submission.js"></script>
+    <script src="/assets/js/form_submission.js"></script>
 </body>
 
 </html>

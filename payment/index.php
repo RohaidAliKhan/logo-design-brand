@@ -1,27 +1,45 @@
 ﻿<?php include '../order-includes/header.php' ?>
 <?php
-    $slug = $_GET['slug'] ?? null;
+    session_start();
+
+    $slug    = $_GET['slug']    ?? null;
+    $landing = $_GET['landing'] ?? null;
+
     if (empty($slug)) {
         header("Location: /");
         exit;
     }
+
+    $source = $packages;
+
+    if (!empty($landing) && isset($landing_packages[$landing])) {
+        $source = $landing_packages[$landing];
+    }
+
     $packageDetails = null;
-    foreach ($packages as $categoryName => $categoryPackages) {
-        if (isset($categoryPackages[$slug])) {
-            $packageDetails = $categoryPackages[$slug];
-            $packageDetails['category'] = $categoryName; // optional
-            break;
+
+    if (isset($source[$slug])) {
+        $packageDetails = $source[$slug];
+    } else {
+        foreach ($source as $categoryName => $categoryPackages) {
+            if (isset($categoryPackages[$slug])) {
+                $packageDetails = $categoryPackages[$slug];
+                $packageDetails['category'] = $categoryName;
+                break;
+            }
         }
     }
+
     if (!$packageDetails) {
         header("Location: /");
         exit;
     }
-    session_start();
+
     if (empty($_SESSION['name'])) {
         header("Location: /");
         exit;
     }
+
 ?>
     <title>Payment Form | <?php echo $packageDetails['title']; ?></title>
     <meta name="description" content="Best Web Design Agency located in Dallas Taxes offers web, logo, digital marketing, stationery services. Hire professional web designers now!">

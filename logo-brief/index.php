@@ -1,27 +1,45 @@
 ﻿<?php include '../order-includes/header.php' ?>
 <?php
-    $slug = $_GET['slug'] ?? null;
+    session_start();
+
+    $slug    = $_GET['slug']    ?? null;
+    $landing = $_GET['landing'] ?? null;
+
     if (empty($slug)) {
         header("Location: /");
         exit;
     }
+
+    $source = $packages;
+
+    if (!empty($landing) && isset($landing_packages[$landing])) {
+        $source = $landing_packages[$landing];
+    }
+
     $packageDetails = null;
-    foreach ($packages as $categoryName => $categoryPackages) {
-        if (isset($categoryPackages[$slug])) {
-            $packageDetails = $categoryPackages[$slug];
-            $packageDetails['category'] = $categoryName; // optional
-            break;
+
+    if (isset($source[$slug])) {
+        $packageDetails = $source[$slug];
+    } else {
+        foreach ($source as $categoryName => $categoryPackages) {
+            if (isset($categoryPackages[$slug])) {
+                $packageDetails = $categoryPackages[$slug];
+                $packageDetails['category'] = $categoryName;
+                break;
+            }
         }
     }
+
     if (!$packageDetails) {
         header("Location: /");
         exit;
     }
-    session_start();
+
     if (empty($_SESSION['name'])) {
         header("Location: /");
         exit;
     }
+
 ?>
     <title>Logo Form | <?php echo $packageDetails['title']; ?></title>
     <meta name="description" content="Best Web Design Agency located in Dallas Taxes offers web, logo, digital marketing, stationery services. Hire professional web designers now!">
@@ -58,6 +76,7 @@
                         <div class="row" style="display: flex;flex-wrap: wrap;">
                             <div class="col-md-12">
                                 <form class="form_submission" method="post" enctype="multipart/form-data" action="javascript:void(0)" data-recaptcha="<?php echo GOOGLE_RECAPTCHA_SITE_KEY; ?>">
+                                    <input type="hidden" name="landing_page" value="<?php echo htmlspecialchars($_SESSION['landing'] ?? ''); ?>">
                                     <input type="hidden" name="url" value='<?php echo (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>'>
                                     <input type="hidden" name="domain" value="<?php echo $_SERVER['SERVER_NAME']; ?>">
                                     <input type="hidden" name="subject" value="Logo Form (<?php echo $_SERVER['SERVER_NAME']; ?>)">

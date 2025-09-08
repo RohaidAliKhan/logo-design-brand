@@ -45,9 +45,14 @@
 		$_SESSION['package_name'] = $_POST['optional']['package_name'];
 		$_SESSION['package_price'] = $_POST['optional']['package_price'];
 
-		if(isset($_POST['optional'])){
+		$landing = null;
+		if (isset($_POST['optional'])) {
 			$optional = $_POST['optional'];
-		}else{
+			if (!empty($optional['landing_page'])) {
+				$landing = $optional['landing_page'];
+				$_SESSION['landing'] = $landing;
+			}
+		} else {
 			$optional = null;
 		}
 		$reCaptchaToken = $_POST['recaptcha_token'];
@@ -78,7 +83,11 @@
 				'domain' => $domain
 			);
 			sendLeadToTerminal($senderRequest);
-			echo json_encode(array('response' => $return_param, 'package_name' => $_POST['optional']['package_name']));
+			echo json_encode(array(
+				'response' => $return_param,
+				'package_name' => $_POST['optional']['package_name'],
+				'landing' => $landing
+			));
 		}else{
           	echo json_encode(array('response' => 'Invalid request.', 'status' => false));
         }
@@ -89,9 +98,14 @@
 		$url = $_POST['url'];
 		$domain = $_POST['domain'];
 		$subject = $_POST['subject'];
-		if(isset($_POST['optional'])){
+		$landing = null;
+		if (isset($_POST['optional'])) {
 			$optional = $_POST['optional'];
-		}else{
+			if (!empty($optional['landing_page'])) {
+				$landing = $optional['landing_page'];
+				$_SESSION['landing'] = $landing;
+			}
+		} else {
 			$optional = null;
 		}
 		$reCaptchaToken = $_POST['recaptcha_token'];
@@ -124,7 +138,11 @@
 				'email' => $email
 			);
 			sendLogoFormToTerminal($senderRequest);
-			echo json_encode(array('response' => $return_param, 'package_name' => $_POST['optional']['package_name']));
+			echo json_encode(array(
+				'response' => $return_param,
+				'package_name' => $_POST['optional']['package_name'],
+				'landing' => $landing
+			));
 		}else{
           	echo json_encode(array('response' => 'Invalid request.', 'status' => false));
         }
@@ -147,7 +165,11 @@
 		$name = $_POST['name'];
 		$email = $_POST['email'];
 		$phone = $_POST['phone'];
-		$message = $_POST['message'];
+		if(isset($_POST['message'])){
+			$message = $_POST['message'];
+		}else{
+			$message = null;
+		}
 		$url = $_POST['url'];
 		$domain = $_POST['domain'];
 		$subject = $_POST['subject'];
@@ -184,6 +206,7 @@
 				'domain' => $domain
 			);
 			sendLeadToTerminal($senderRequest);
+			
 	    	echo json_encode(array('response' => $return_param, 'status' => true));
         }else{
           	echo json_encode(array('response' => 'Invalid request.', 'status' => false));

@@ -2565,3 +2565,13 @@ footer .footer-cont p {
 a.footer-logo {
 	width: 200px
 }
+
+label.error {
+    display: none !important;
+}
+
+input.error {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}

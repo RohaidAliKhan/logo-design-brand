@@ -112,6 +112,7 @@ $(document).ready(function(){
 			    var domain = $(e).find('[name="domain"]').val();
 			    var subject = $(e).find('[name="subject"]').val();
 				var user_ip = $('#user_ip').val();
+				var landingPage  = $(e).find('[name="landing_page"]').val() || "";
 				var get_form = "landing_page";
 				var form_type = ""; 
 				if ($(e).find('[name="get-form"]').length > 0) {
@@ -120,6 +121,10 @@ $(document).ready(function(){
 					obj['package_name'] = $(e).find('[name="package_name"]').val();
 					obj['package_price'] = $(e).find('[name="package_price"]').val();
 				}
+				if (landingPage) {
+					obj['landing_page']    = landingPage;
+				}
+				
 			    var form = 0;
 			    if($(e).find('[name="form"]').length != 0){
 			        form = $(e).find('[name="form"]').val();
@@ -159,15 +164,22 @@ $(document).ready(function(){
 										}
 										if(get_form == 'order_form'){
 											if(form_type == 0){
-												window.location.href = window.location.origin + "/logo-brief/index.php?slug="+data.package_name;
+												var baseUrl = window.location.origin + "/logo-brief/index.php?slug=" + data.package_name;
+												if (data.landing) {
+													baseUrl += "&landing=" + encodeURIComponent(data.landing);
+												}
+												window.location.href = baseUrl;
 											}else{
 												window.location.href = window.location.origin + "/payment/index.php?slug="+data.package_name;
 											}
 										}
 										if(get_form == 'logo_form'){
-											window.location.href = window.location.origin + "/payment/index.php?slug="+data.package_name;
+											var baseUrl = window.location.origin + "/payment/index.php?slug=" + data.package_name;
+											if (data.landing) {
+												baseUrl += "&landing=" + encodeURIComponent(data.landing);
+											}
+											window.location.href = baseUrl;
 										}
-
 									}else{
 										$(e).find('.error').html('Error Occurred');
 										$submitBtn.prop('disabled', false);

@@ -83,10 +83,10 @@
                             </div>
                             <div class="col-md-6 col-lg-7" data-form-type="ordernow_form">
                                 <form id="orderForm" class="leadForm form_submission" method="post" enctype="multipart/form-data" action="javascript:void(0)" data-recaptcha="<?php echo GOOGLE_RECAPTCHA_SITE_KEY; ?>">
+                                    <input type="hidden" name="get-form" value="order_form">
                                     <input type="hidden" name="url" value='<?php echo (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>'>
                                     <input type="hidden" name="domain" value="<?php echo $_SERVER['SERVER_NAME']; ?>">
                                     <input type="hidden" name="subject" value="Order Form (<?php echo $_SERVER['SERVER_NAME']; ?>)">
-                                    <input type="hidden" name="get-form" value="order_form">
                                     <input type="hidden" name="form-type" value="<?php echo $packageDetails['form_id']; ?>">
                                     <input type="hidden" name="package_name" value="<?php echo $slug; ?>">
                                     <input type="hidden" name="package_price" value="$<?php echo $packageDetails['price']; ?>">
