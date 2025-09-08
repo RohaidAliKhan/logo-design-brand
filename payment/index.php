@@ -402,7 +402,7 @@
                     success: function(data) {
                         if (data.status) {
                             localStorage.clear();
-                            window.location.href = "../thankyou";
+                            window.location.href = "../thankyou/success.php";
                         } else {
                             $('#stripe-submit').prop('disabled', false);
                             $('#order-place').find('.error').addClass('alert alert-danger');
