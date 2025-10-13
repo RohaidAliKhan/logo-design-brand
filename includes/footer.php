@@ -90,17 +90,17 @@
             <div class="PopupForm_main-popup-from__hX6v7" >
                <div class="PopupForm_main-grid__aqvQG" >
                   <div class="PopupForm_left-info__tbKOA" >
-                     <img alt="logo" loading="lazy" width="84" height="52" src="../assets/images/wt-logo.svg" style="color: transparent;">
+                     <img alt="logo" loading="lazy" width="84" height="52" src="assets/images/wt-logo.svg" style="color: transparent;">
                      <div class="PopupForm_first-box__AlZpS" >
                         <h2>OUR RECENT WORK</h2>
-                        <img alt="logo-grid" loading="lazy" width="419" height="254" src="../assets/images/logo-grid.jpg" style="color: transparent;">
+                        <img alt="logo-grid" loading="lazy" width="419" height="254" src="assets/images/logo-grid.jpg" style="color: transparent;">
                      </div>
                      <div class="PopupForm_second-box__JMwNg" >
                         <h3>450+ Verified Reviews</h3>
                         <div class="PopupForm_client-grid__caH5O" >
-                            <img alt="logo-grid" loading="lazy" width="103" height="33" src="../assets/images/google.svg" style="color: transparent;">
-                            <img alt="logo-grid" loading="lazy" width="95" height="27" src="../assets/images/clutch.png" style="color: transparent;">
-                            <img alt="logo-grid" loading="lazy" width="108" height="30" src="../assets/images/trustpilot.png" style="color: transparent;"></div>
+                            <img alt="logo-grid" loading="lazy" width="103" height="33" src="assets/images/google.svg" style="color: transparent;">
+                            <img alt="logo-grid" loading="lazy" width="95" height="27" src="assets/images/clutch.png" style="color: transparent;">
+                            <img alt="logo-grid" loading="lazy" width="108" height="30" src="assets/images/trustpilot.png" style="color: transparent;"></div>
                      </div>
                      <div class="PopupForm_third-box__3zbPY" >
                         <h3>3500+</h3>
@@ -410,7 +410,7 @@
                         <div class="error mt-3 alert alert-danger text-left mb-0" style="display: none"></div>
                         <div class="success mt-3 alert alert-success text-left mb-0" style="display: none"></div>
                         <div class="loader" style="display: none">
-                           <img alt="loader" src="/loader.gif">
+                           <img alt="loader" src="loader.gif">
                         </div>
                      </form>
                   </div>

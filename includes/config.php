@@ -20,11 +20,16 @@ define('ADDRESS', '1860 Cool Creek DrSt. Charles, IL 60174, USA');
 define('ADDRESS2', '44 Tehama ST San Francisco CA 94105');
 define('ADDRESS3', 'Data Center : Houston, Texas');
 define('ADDRESS_HREF', '');
-define('WEBSITE_NAME', 'Pace On Studio');
-define('WEBSITE_LINK', 'domain.com/');
-define('WEBSITE_NAME_PLURAL', "Pace On Studio");
-define('GOOGLE_RECAPTCHA_SITE_KEY', "6LfMIK8rAAAAAN1fQCiL955v7EHyBUBs-NeVMWSd");
-define('GOOGLE_RECAPTCHA_SECRET_KEY', "6LfMIK8rAAAAAKhkNzfulhETF-__lWVaSd-9yjyZ");
+define('WEBSITE_NAME', 'Visual Designs Lab');
+define('WEBSITE_LINK', 'visualdesignslab.com.au');
+define('WEBSITE_NAME_PLURAL', "Visual Designs Lab's");
+
+define('GOOGLE_RECAPTCHA_SITE_KEY', "6LcZxsYrAAAAAJxq1HI6dceCfrFgJGiyvGS9XblB");
+define('GOOGLE_RECAPTCHA_SECRET_KEY', "6LcZxsYrAAAAAKVqZ5vr8-DTKEBh3SEfKBWRsFDr");
+
+// LOCAL FOR TEST
+// define('GOOGLE_RECAPTCHA_SITE_KEY', "6LfMIK8rAAAAAN1fQCiL955v7EHyBUBs-NeVMWSd");
+// define('GOOGLE_RECAPTCHA_SECRET_KEY', "6LfMIK8rAAAAAKhkNzfulhETF-__lWVaSd-9yjyZ");
 // define('TERMINAL', "http://127.0.0.1:8000/");
 define('TERMINAL', "https://terminal.tech-deck.co/");
 define('TERMINAL_BRAND', "68ba2bf8d5e01");

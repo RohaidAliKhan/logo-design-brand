@@ -391,27 +391,27 @@
          </div>
          <div class="bevisible_grid-list">
             <div class="bevisible_list-info">
-               <img alt="icon" loading="lazy" width="100" height="100" style="color:transparent" src="/assets/images/web-images/b1.png">
+               <img alt="icon" loading="lazy" width="100" height="100" style="color:transparent" src="assets/images/web-images/b1.png">
                <hr>
                <p>97% Approve in <br> 2 Rounds</p>
             </div>
             <div class="bevisible_list-info">
-               <img alt="icon" loading="lazy" width="100" height="100" style="color:transparent" src="/assets/images/web-images/b2.png">
+               <img alt="icon" loading="lazy" width="100" height="100" style="color:transparent" src="assets/images/web-images/b2.png">
                <hr>
                <p>70% from <br> Referrals</p>
             </div>
             <div class="bevisible_list-info">
-               <img alt="icon" loading="lazy" width="100" height="100" style="color:transparent" src="/assets/images/web-images/b3.png">
+               <img alt="icon" loading="lazy" width="100" height="100" style="color:transparent" src="assets/images/web-images/b3.png">
                <hr>
                <p>82% Launch in <br> 30 Days</p>
             </div>
             <div class="bevisible_list-info">
-               <img alt="icon" loading="lazy" width="100" height="100" style="color:transparent" src="/assets/images/web-images/b4.png">
+               <img alt="icon" loading="lazy" width="100" height="100" style="color:transparent" src="assets/images/web-images/b4.png">
                <hr>
                <p>97% Satisfaction <br> Rate</p>
             </div>
             <div class="bevisible_list-info">
-               <img alt="icon" loading="lazy" width="100" height="100" style="color:transparent" src="/assets/images/web-images/b5.png">
+               <img alt="icon" loading="lazy" width="100" height="100" style="color:transparent" src="assets/images/web-images/b5.png">
                <hr>
                <p>Money-back <br> Guarantee</p>
             </div>
@@ -444,7 +444,7 @@
                   </div>
                   <button class="primary-button_btn" data-modal-target="mainPopup">Talk to Sales!</button>
                </div>
-               <div class="growthmodel_right-info"><img alt="image" loading="lazy" width="524" height="398" style="color:transparent" src="/assets/images/web-images/wod1.webp"></div>
+               <div class="growthmodel_right-info"><img alt="image" loading="lazy" width="524" height="398" style="color:transparent" src="assets/images/web-images/wod1.webp"></div>
             </div>
             <div class="growthmodel_grid-info">
                <div class="growthmodel_left-info">
@@ -454,7 +454,7 @@
                   </div>
                   <button class="primary-button_btn" data-modal-target="mainPopup">Talk to Sales!</button>
                </div>
-               <div class="growthmodel_right-info"><img alt="image" loading="lazy" width="500" height="452" decoding="async" data-nimg="1" style="color:transparent" src="/assets/images/web-images/letter1.webp"></div>
+               <div class="growthmodel_right-info"><img alt="image" loading="lazy" width="500" height="452" decoding="async" data-nimg="1" style="color:transparent" src="assets/images/web-images/letter1.webp"></div>
             </div>
             <div class="growthmodel_grid-info">
                <div class="growthmodel_left-info">
@@ -464,7 +464,7 @@
                   </div>
                   <button class="primary-button_btn" data-modal-target="mainPopup">Talk to Sales!</button>
                </div>
-               <div class="growthmodel_right-info"><img alt="image" loading="lazy" width="549" height="336" decoding="async" data-nimg="1" style="color:transparent" src="/assets/images/web-images/comb1.webp"></div>
+               <div class="growthmodel_right-info"><img alt="image" loading="lazy" width="549" height="336" decoding="async" data-nimg="1" style="color:transparent" src="assets/images/web-images/comb1.webp"></div>
             </div>
             <div class="growthmodel_grid-info">
                <div class="growthmodel_left-info">
@@ -474,7 +474,7 @@
                   </div>
                   <button class="primary-button_btn" data-modal-target="mainPopup">Talk to Sales!</button>
                </div>
-               <div class="growthmodel_right-info"><img alt="image" loading="lazy" width="897" height="1161" decoding="async" data-nimg="1" style="color:transparent" src="/assets/images/web-images/emblem.webp"></div>
+               <div class="growthmodel_right-info"><img alt="image" loading="lazy" width="897" height="1161" decoding="async" data-nimg="1" style="color:transparent" src="assets/images/web-images/emblem.webp"></div>
             </div>
             <div class="growthmodel_grid-info">
                <div class="growthmodel_left-info">
@@ -484,7 +484,7 @@
                   </div>
                   <button class="primary-button_btn" data-modal-target="mainPopup">Talk to Sales!</button>
                </div>
-               <div class="growthmodel_right-info"><img alt="image" loading="lazy" width="897" height="1161" decoding="async" data-nimg="1" style="color:transparent" src="/assets/images/web-images/mascot.webp"></div>
+               <div class="growthmodel_right-info"><img alt="image" loading="lazy" width="897" height="1161" decoding="async" data-nimg="1" style="color:transparent" src="assets/images/web-images/mascot.webp"></div>
             </div>
          </div>
       </div>
@@ -699,31 +699,31 @@
          <div class="BrandIdentity_list__xJRZF">
             <div class="BrandIdentity_grid-info__WDY94">
                <h4>01</h4>
-               <img alt="icon" loading="lazy" width="60" height="65" style="color:transparent" src="/assets/images/web-images/dp-1.png">
+               <img alt="icon" loading="lazy" width="60" height="65" style="color:transparent" src="assets/images/web-images/dp-1.png">
                <h2>Discovery</h2>
                <p>Every successful project starts with clarity. Our professional logo design services begin with understanding your business goals, audience, and industry. This stage sets the foundation for building a meaningful brand identity through our custom logo design services.</p>
             </div>
             <div class="BrandIdentity_grid-info__WDY94">
                <h4>02</h4>
-               <img alt="icon" loading="lazy" width="60" height="57" style="color:transparent" src="/assets/images/web-images/dp-2.png">
+               <img alt="icon" loading="lazy" width="60" height="57" style="color:transparent" src="assets/images/web-images/dp-2.png">
                <h2>Research</h2>
                <p>We analyze competitors, trends, and consumer behavior to guide visual strategy. This ensures our logo design services for businesses create logos that stand out and resonate with the right audience—across digital, social, and print.</p>
             </div>
             <div class="BrandIdentity_grid-info__WDY94">
                <h4>03</h4>
-               <img alt="icon" loading="lazy" width="60" height="56" style="color:transparent" src="/assets/images/web-images/dp-3.png">
+               <img alt="icon" loading="lazy" width="60" height="56" style="color:transparent" src="assets/images/web-images/dp-3.png">
                <h2>Concepts</h2>
                <p>Our top logo designers in the USA create multiple custom logo concepts—from wordmark to lettermark, brandmark, emblem, or mascot logo styles. Each concept is built for scalability, memorability, and modern branding.</p>
             </div>
             <div class="BrandIdentity_grid-info__WDY94">
                <h4>04</h4>
-               <img alt="icon" loading="lazy" width="60" height="54" style="color:transparent" src="/assets/images/web-images/dp-4.png">
+               <img alt="icon" loading="lazy" width="60" height="54" style="color:transparent" src="assets/images/web-images/dp-4.png">
                <h2>Revisions</h2>
                <p>With unlimited revisions and an average 5-hour turnaround, our custom logo design company makes sure your logo is refined until it feels exactly right. You get creative control, speed, and expert input—every step of the way.</p>
             </div>
             <div class="BrandIdentity_grid-info__WDY94">
                <h4>05</h4>
-               <img alt="icon" loading="lazy" width="60" height="54" style="color:transparent" src="/assets/images/web-images/dp-5.png">
+               <img alt="icon" loading="lazy" width="60" height="54" style="color:transparent" src="assets/images/web-images/dp-5.png">
                <h2>Delivery</h2>
                <p>Once approved, we deliver your full logo design package: high-res formats (AI, SVG, EPS, PNG), black-and-white versions, and a full brand usage guide. Our logo design services include full ownership, forever.</p>
             </div>
@@ -738,7 +738,7 @@
                <p>We’re the logo design company trusted by first-time founders, scrappy startups, and ambitious creators ready to make their mark. Join 3,500+ brands who used our custom logo design services to launch bold, unforgettable identities.</p>
                <button class="primary-button_btn" data-modal-target="mainPopup">Your Brand Starts Here</button>
             </div>
-            <div class="BottomCta_right-info__1623a"><img alt="cta-img" loading="lazy" width="742" height="640" style="color:transparent" src="/assets/images/web-images/bottom-cta.webp"></div>
+            <div class="BottomCta_right-info__1623a"><img alt="cta-img" loading="lazy" width="742" height="640" style="color:transparent" src="assets/images/web-images/bottom-cta.webp"></div>
          </div>
       </div>
    </section>
