@@ -346,28 +346,32 @@ function initMilestoneCounter({ sectionSelector = ".bevisible_center-info", numb
     return 1 - Math.pow(1 - t, 3);
   }
 
-  function animateCount() {
-    const start = performance.now();
-    const from = 0;
-    const to = Math.max(0, parseInt(target, 10) || 0);
+function animateCount(numEl, target, duration = 2000, digits = 2, suffix = "") {
+  const start = performance.now();
+  const from = 0;
+  const to = Math.max(0, parseInt(target, 10) || 0);
 
-    function frame(now) {
-      const elapsed = now - start;
-      const t = Math.min(1, elapsed / duration);
-      const eased = easeOutCubic(t);
-      const current = Math.round(from + (to - from) * eased);
-
-      // Leading zeros + optional suffix (only at the end show suffix)
-      const padded = String(current).padStart(digits, "0");
-      numEl.textContent = t < 1 ? padded : String(to).padStart(digits, "0") + (suffix || "");
-
-      if (t < 1) {
-        requestAnimationFrame(frame);
-      }
-    }
-    requestAnimationFrame(frame);
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
   }
 
+  function frame(now) {
+    const elapsed = now - start;
+    const t = Math.min(1, elapsed / duration);
+    const eased = easeOutCubic(t);
+    const current = Math.round(from + (to - from) * eased);
+
+    // Leading zeros + suffix at end
+    const padded = String(current).padStart(digits, "0");
+    numEl.textContent = t < 1 ? padded : String(to).padStart(digits, "0") + suffix;
+
+    if (t < 1) {
+      requestAnimationFrame(frame);
+    }
+  }
+
+  requestAnimationFrame(frame);
+}
   // Trigger on enter using IntersectionObserver
   const io = new IntersectionObserver(
     (entries) => {
