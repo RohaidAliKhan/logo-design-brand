@@ -498,6 +498,10 @@ a {
     margin-right: auto
 }
 
+.PopupForm_main-popup-from__hX6v7 .PopupForm_main-grid__aqvQG .PopupForm_left-info__tbKOA img:first-child {
+    filter: brightness(0) invert(1);
+}
+
 .PopupForm_main-popup-from__hX6v7 .PopupForm_main-grid__aqvQG .PopupForm_left-info__tbKOA .PopupForm_first-box__AlZpS h2 {
     font-size: 32px;
     font-weight: 700;
@@ -5015,11 +5019,11 @@ a {
 }
 
 .Footer_main-footer__k5FIT .Footer_footer-grid__jDrWx .Footer_right-info__aYxGo img {
-  max-width: 100px;
+  max-width: 160px;
   min-height: 65px;
   width: auto;
   height: auto;
-  filter: brightness(100);
+  filter: brightness(0) invert(1);
 }
 
 .Footer_main-footer__k5FIT .Footer_copyright__Bdlh1 {

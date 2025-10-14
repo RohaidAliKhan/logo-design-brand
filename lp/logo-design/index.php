@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/lp/lp2/css/layout.css">
     <link rel="stylesheet" href="assets/lp/lp2/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/lp/lp2/css/style.css">
-    <!-- <link rel="icon" href="static/images/2024/11/cropped-png-new-logo-dd-1-32x32.png" sizes="32x32"> -->
+    <link rel="icon" href="/favicon.svg" sizes="32x32">
     <link href="assets/css/ledge/sweetalert.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">

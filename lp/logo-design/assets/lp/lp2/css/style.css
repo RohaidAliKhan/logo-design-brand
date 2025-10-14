@@ -403,7 +403,8 @@ textarea {
 
 .main-header .logo img {
 	display: block;
-	width: 120px
+	width: 150px;
+	filter: brightness(0)invert(1);
 }
 
 .main-header .header-action ul {

@@ -53,7 +53,7 @@
 <header class="header_main-header">
     <div class="container-fluid">
     <div class="header_grid-info">
-        <div><a href="index.php"><img alt="logo" width="84" height="52" style="color:transparent" src="assets/images/logo.svg"></a></div>
+        <div><a href="index.php"><img alt="logo" width="180" height="70" style="color:transparent" src="assets/images/logo.svg"></a></div>
         <div class="header_right-info">
             <div class="header_header-menu">
                 <ul>
