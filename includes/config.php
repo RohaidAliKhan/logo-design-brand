@@ -7,18 +7,18 @@ if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
 }
 
 define('CURRENT_URL', $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-define('ADMIN_EMAIL', 'info@domain.com');
-define('ADMIN_EMAIL_SENDER', 'developerxavtech@gmail.com');
-define('ADMIN_APP_PASSWORD', 'vxvtdlxmkvatlfry');
+define('ADMIN_EMAIL', 'info@visualdesignslab.com.au');
+define('ADMIN_EMAIL_SENDER', 'thebookpublishingorg@gmail.com');
+define('ADMIN_APP_PASSWORD', 'kvvu rndl xgoh gyyx');
 define('PHONE', '(872) 201-1157');
 define('PHONE_HREF', 'tel:+18722011157');
-define('EMAIL', 'info@domain.com');
-define('EMAIL_HREF', 'mailto:info@domain.com');
-define('CONTACT_EMAIL', 'info@domain.com');
-define('CONTACT_EMAIL_HREF', 'mailto:info@domain.com');
+define('EMAIL', 'info@visualdesignslab.com.au');
+define('EMAIL_HREF', 'mailto:info@visualdesignslab.com.au');
+define('CONTACT_EMAIL', 'info@visualdesignslab.com.au');
+define('CONTACT_EMAIL_HREF', 'mailto:info@visualdesignslab.com.au');
 define('ADDRESS', '1860 Cool Creek DrSt. Charles, IL 60174, USA');
 define('ADDRESS2', '44 Tehama ST San Francisco CA 94105');
-define('ADDRESS3', 'Data Center : Houston, Texas');
+define('ADDRESS3', 'Data Center : Houston');
 define('ADDRESS_HREF', '');
 define('WEBSITE_NAME', 'Visual Designs Lab');
 define('WEBSITE_LINK', 'visualdesignslab.com.au');

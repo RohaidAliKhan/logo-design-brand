@@ -49,7 +49,7 @@
          <div class="portfolioslider_main-info">
             <h5></h5>
             <h2>Explore Our Creative Showcase</h2>
-            <p>Born from a passion for creating truly distinct and memorable designs, our best creative design agency in Dallas, Texas, thrives on collaboration. Decades of experience have honed our skills, while ongoing partnerships with industry leaders keep us at the forefront of the design landscape. This ensures we deliver impactful and innovative design solutions for your brand.</p>
+            <p>Born from a passion for creating truly distinct and memorable designs, our best creative design agency thrives on collaboration. Decades of experience have honed our skills, while ongoing partnerships with industry leaders keep us at the forefront of the design landscape. This ensures we deliver impactful and innovative design solutions for your brand.</p>
          </div>
          <div class="portfolioslider_portfolio-slider">
             <div class="swiper cus--slider margin-b-15">

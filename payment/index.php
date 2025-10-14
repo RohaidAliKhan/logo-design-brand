@@ -42,7 +42,7 @@
 
 ?>
     <title>Payment Form | <?php echo $packageDetails['title']; ?></title>
-    <meta name="description" content="Best Web Design Agency located in Dallas Taxes offers web, logo, digital marketing, stationery services. Hire professional web designers now!">
+    <meta name="description" content="Best Web Design Agency located  Taxes offers web, logo, digital marketing, stationery services. Hire professional web designers now!">
     <style>
         section.steps-seq ul li:last-child:after{
             display: none;

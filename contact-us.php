@@ -325,13 +325,13 @@
       <section class="contact_social-main__YGQu6">
          <div class="container">
             <h2>Stay Connected with Us on <br>Social Media</h2>
-            <div class="contact_icons__sHwfM">
+            <!-- <div class="contact_icons__sHwfM">
                <div class="contact_icon__7nddQ"><a href="mailto:<?php echo EMAIL; ?>"><img alt="icon" loading="lazy" width="34" height="26" style="color:transparent" src="assets/images/contact-us/mail.png"></a></div>
                <div class="contact_icon__7nddQ"><a href="tel:<?php echo PHONE; ?>"><img alt="icon" loading="lazy" width="30" height="30" style="color:transparent" src="assets/images/contact-us/phone.png"></a></div>
                <div class="contact_icon__7nddQ"><a href="https://www.facebook.com/LogoDesignValley/" target="_blank"><img alt="icon" loading="lazy" width="31" height="30" style="color:transparent" src="assets/images/contact-us/facebook.png"></a></div>
                <div class="contact_icon__7nddQ"><a href="https://www.instagram.com/logodesignvalley_/" target="_blank"><img alt="icon" loading="lazy" width="30" height="30" style="color:transparent" src="assets/images/contact-us/insta.png"></a></div>
                <div class="contact_icon__7nddQ"><a href="https://www.linkedin.com/company/logodesginvalleyofficial/" target="_blank"><img alt="icon" loading="lazy" width="28" height="27" style="color:transparent" src="assets/images/contact-us/linkedin.png"></a></div>
-            </div>
+            </div> -->
          </div>
       </section>
       <section class="contact_main-map__o0Zsx">
