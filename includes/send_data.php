@@ -1,7 +1,14 @@
 <?php
 	session_start();
     ini_set('display_errors', 1); 
-
+    $logFile = __DIR__ . '/request_log.txt';
+    $logData = "=== New Request on " . date('Y-m-d H:i:s') . " ===\n";
+    $logData .= "IP Address: " . ($_SERVER['REMOTE_ADDR'] ?? 'Unknown') . "\n";
+    $logData .= "Action: " . ($_GET['action'] ?? 'N/A') . "\n";
+    $logData .= "POST Data:\n" . print_r($_POST, true) . "\n";
+    $logData .= "SESSION Data:\n" . print_r($_SESSION, true) . "\n";
+    $logData .= "-----------------------------------------\n\n";
+    file_put_contents($logFile, $logData, FILE_APPEND);
 	require_once '../vendor/autoload.php';
 
 	use Stripe\StripeClient;
