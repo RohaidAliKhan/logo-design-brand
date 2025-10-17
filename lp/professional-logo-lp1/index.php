@@ -1,6 +1,7 @@
 ﻿<?php
 include(__DIR__ . '/../../includes/config.php');
 ?>
+<?php include '../../includes/packages-data.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -446,14 +447,20 @@ include(__DIR__ . '/../../includes/config.php');
                         <h3><span><span style="color:#ffc500">70% OFF </span> LIMITED TIME OFFER</span>
                         </h3>
 
-                        <form class="has-validation-callback orderBriefForm" method="post">
-                            <input type="hidden" name="logo-brief" value="1" class="form-input">
-                            <input type="hidden" name="subject" value="Landing Banner form" class="form-input">
+                        <form class="form_submission" method="post">
+                            <input type="hidden" name="get-form" value="order_form">
+                            <input type="hidden" name="form-type" value="<?php echo $landing_packages[5]['logo-special']['form_id'] ?? ''; ?>">
+                            <input type="hidden" name="url" value="<?php echo htmlspecialchars(CURRENT_URL, ENT_QUOTES, 'UTF-8'); ?>">
+                            <input type="hidden" name="domain" value="www.<?php echo WEBSITE_LINK ?>">
+                            <input type="hidden" name="subject" value="Landing Page Form (www.<?php echo WEBSITE_LINK ?>)">
+                            <input type="hidden" name="package_name" value="logo-special">
+                            <input type="hidden" name="package_price" value="$59">
+                            <input type="hidden" name="landing_page" value="1">
                             <div class="name">
-                                <input type="text" name="name" placeholder="Name" class="iecn alphanumeric form-input" required>
+                                <input type="text" name="cn" placeholder="Name" class="iecn alphanumeric form-input" required>
                             </div>
                             <div class="email">
-                                <input type="email" name="email" placeholder="Email" class="email email_slider_form form-input" required>
+                                <input type="email" name="em" placeholder="Email" class="email email_slider_form form-input" required>
                             </div>
                             <div class="selectservice">
                                 <select class="countrylist form-input" name="country">
@@ -707,7 +714,7 @@ include(__DIR__ . '/../../includes/config.php');
                                 </select>
                             </div>
                             <div class="phone">
-                                <input type="tel" name="phone" placeholder="Phone Number" class="number form-input" minlength="7" required>
+                                <input type="tel" name="pn" placeholder="Phone Number" class="number form-input" minlength="7" required>
                             </div>
 
                             <input type="submit" name="cta" class="btn-orangedark" value="Get Started">
@@ -1544,144 +1551,51 @@ include(__DIR__ . '/../../includes/config.php');
 
                                 <div id="illus-pkg" class="tab-pane active">
                                     <div class="row mr">
+                                        <?php
+                                        $packages_to_show = $landing_packages[5] ?? []; 
+                                        ?>
+                                        <?php foreach ($packages_to_show as $slug => $package): ?>  
+                                            <div class="col-md-4 mt-5">
+                                                <div class="pricing-box one" data-package-box>
+                                                    <div class="collapse-top collapsed" data-target="#one" aria-expanded="true">
+                                                        <div class="price-box">
+                                                            <p><strong class="text-uppercase" data-package-name><?php echo $package['title']; ?></strong><br>
 
-                                        <div class="col-md-4 mt-5">
-                                            <div class="pricing-box one" data-package-box>
-                                                <div class="collapse-top collapsed" data-target="#one" aria-expanded="true">
-                                                    <div class="price-box">
-                                                        <p><strong class="text-uppercase" data-package-name>Logo Special</strong><br>
+                                                            <h6><span data-package-price>$<?php echo $package['price']; ?></span> <strike data-package-old-price> $<?php echo $package['old_price']; ?></strike></h6>
 
-                                                        <h6><span data-package-price>$35</span> <strike data-package-old-price> $117</strike></h6>
-
+                                                        </div>
                                                     </div>
+                                                    <div class="collapse-div" id="one">
+                                                        <div class="package-list" data-package-scroll="">
+                                                            <ul data-package-description>
+                                                                <?php foreach ($package['features'] as $feature): ?>
+                                                                        <?php if (is_array($feature)): ?>
+                                                                            <li class="<?php echo $feature['class']; ?>">
+                                                                                <?php echo $feature['text']; ?>
+                                                                            </li>
+                                                                        <?php else: ?>
+                                                                            <li>
+                                                                                <?php echo $feature; ?></li>
+                                                                        <?php endif; ?>
+                                                                <?php endforeach; ?>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="call-to">
+                                                        <div>
+                                                            <p>Start Your Work</p>
+                                                            <p><a href="tel:<?php echo PHONE_HREF ?>"><?php echo PHONE ?></a></p>
+                                                        </div>
+                                                        <div>
+                                                            <p>For More Detail</p>
+                                                            <p><a href="javascript:;" class="chat">Chat With us</a></p>
+                                                        </div>
+                                                    </div>
+                                                    <a class="order_now order-package" href="/order/index.php?slug=<?php echo $slug; ?>" data-category="1" data-price="35">Order Now</a>
                                                 </div>
-                                                <div class="collapse-div" id="one">
-                                                    <div class="package-list" data-package-scroll="">
-                                                        <ul data-package-description>
-                                                            <li>4 Original Logo Concepts</li>
-                                                            <li> 2 Dedicated Logo Designer</li>
-                                                            <li> 4 Revisions</li>
-                                                            <li> With Grey Scale Format</li>
-                                                            <li> Free Icon Design</li>
-                                                            <li> Formats: JPEG Only</li>
-                                                            <li> 24 - 48 Business Hours Turn Around Time</li>
-                                                            <li class="features">MORE FEATURES</li>
-                                                            <li> 100% Satisfaction</li>
-                                                            <li> 100% Ownership Rights</li>
-                                                            <li> Money Back Guarantee</li>
-                                                            <li> Dedicated Account Manager</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-
-                                                <div class="call-to">
-                                                    <div>
-                                                        <p>Start Your Work</p>
-                                                        <p><a href="tel:<?php echo PHONE_HREF ?>"><?php echo PHONE ?></a></p>
-                                                    </div>
-                                                    <div>
-                                                        <p>For More Detail</p>
-                                                        <p><a href="javascript:;" class="chat">Chat With us</a></p>
-                                                    </div>
-                                                </div>
-                                                <a class="order_now order-package" href="/order-now/order" data-category="1" data-price="35">Order Now</a>
                                             </div>
-                                        </div>
-
-                                        <div class="col-md-4 mt-5">
-                                            <div class="pricing-box one">
-                                                <div class="productSku" style="display: none;">LOGO_PLUS_PACKAGE</div>
-
-                                                <div class="collapse-top collapsed" data-target="#one" aria-expanded="true">
-                                                    <div class="price-box">
-                                                        <p><strong class="text-uppercase">Business Plus</strong><br>
-
-                                                        <h6>$119 <strike> $397</strike></h6>
-
-                                                    </div>
-                                                </div>
-                                                <div class="collapse-div" id="one">
-                                                    <div class="package-list" data-package-scroll="">
-                                                        <ul>
-                                                            <li> 12 Original Logo Concepts</li>
-                                                            <li> 4 Dedicated Logo Designer (Industry Specific)</li>
-                                                            <li> Unlimited Revisions</li>
-                                                            <li> Stationery Design (Business Card, Letterhead, Envelope)</li>
-                                                            <li> Email Signature Design</li>
-                                                            <li> With Grey Scale Format</li>
-                                                            <li> Free Icon Design</li>
-                                                            <li> Formats: JPEG, EPS, PNG, TIFF, SVG</li>
-                                                            <li> 24 - 48 Business Hours Turn Around Time</li>
-                                                            <li class="features">MORE FEATURES</li>
-                                                            <li> 100% Satisfaction</li>
-                                                            <li> 100% Ownership Rights</li>
-                                                            <li> Money Back Guarantee</li>
-                                                            <li> Dedicated Account Manager</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-
-                                                <div class="call-to">
-                                                    <div>
-                                                        <p>Start Your Work</p>
-                                                        <p><a href="tel:<?php echo PHONE_HREF ?>"><?php echo PHONE ?></a></p>
-                                                    </div>
-                                                    <div>
-                                                        <p>For More Detail</p>
-                                                        <p><a href="javascript:;" class="chat">Chat With us</a></p>
-                                                    </div>
-                                                </div>
-                                                <a class="order_now order-package" href="/order-now/order" data-category="1" data-price="119">Order Now</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-4 mt-5">
-                                            <div class="pricing-box one">
-                                                <div class="productSku" style="display: none;">LOGO_PLATINUM_PACKAGE</div>
-
-                                                <div class="collapse-top collapsed" data-target="#one" aria-expanded="true">
-                                                    <div class="price-box">
-                                                        <p><strong class="text-uppercase">Logo Aficionado</strong><br>
-
-                                                        <h6>$299 <strike> $997</strike></h6>
-
-                                                    </div>
-                                                </div>
-                                                <div class="collapse-div" id="one">
-                                                    <div class="package-list" data-package-scroll="">
-                                                        <ul>
-                                                            <li>Unlimited Original Logo Concepts</li>
-                                                            <li>8 Dedicated Logo Designer (Industry Specific)</li>
-                                                            <li>Unlimited Revisions</li>
-                                                            <li>Stationery Design (Business Card, Letterhead, Envelope)</li>
-                                                            <li>500 Business Cards </li>
-                                                            <li>Email Signature Design</li>
-                                                            <li>With Grey Scale Format</li>
-                                                            <li>Free Icon Design</li>
-                                                            <li>Formats: JPEG, EPS, PSD, PNG, AI, TIFF, SVG</li>
-                                                            <li>24 - 48 Business Hours Turn Around Time</li>
-                                                            <li class="features">MORE FEATURES</li>
-                                                            <li>100% Satisfaction</li>
-                                                            <li>100% Ownership Rights</li>
-                                                            <li>Money Back Guarantee</li>
-                                                            <li>Dedicated Account Manager</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-
-                                                <div class="call-to">
-                                                    <div>
-                                                        <p>Start Your Work</p>
-                                                        <p><a href="tel:<?php echo PHONE_HREF ?>"><?php echo PHONE ?></a></p>
-                                                    </div>
-                                                    <div>
-                                                        <p>For More Detail</p>
-                                                        <p><a href="javascript:;" class="chat">Chat With us</a></p>
-                                                    </div>
-                                                </div>
-                                                <a class="order_now order-package" href="/order-now/order" data-category="1" data-price="299">Order Now</a>
-                                            </div>
-                                        </div>
+                                        <?php endforeach; ?>
 
 
                                     </div>
@@ -1882,23 +1796,31 @@ include(__DIR__ . '/../../includes/config.php');
                 <div class="col-md-12 col-xs-12">
                     <div class="contact_home wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                         <div class="conform" id="cform" data-form-type="ordernow_form">
-                            <form class="lp1FooterForm" method="post">
+                            <form class="form_submission" method="post">
+                                <input type="hidden" name="get-form" value="order_form">
+                                <input type="hidden" name="form-type" value="<?php echo $landing_packages[5]['logo-special']['form_id'] ?? ''; ?>">
+                                <input type="hidden" name="url" value="<?php echo htmlspecialchars(CURRENT_URL, ENT_QUOTES, 'UTF-8'); ?>">
+                                <input type="hidden" name="domain" value="www.<?php echo WEBSITE_LINK ?>">
+                                <input type="hidden" name="subject" value="Landing Page Form (www.<?php echo WEBSITE_LINK ?>)">
+                                <input type="hidden" name="package_name" value="logo-special">
+                                <input type="hidden" name="package_price" value="$59">
+                                <input type="hidden" name="landing_page" value="1">
                                 <div class="row">
                                     <div class="col-md-6 col-xs-12">
                                         <div class="field">
-                                            <input type="text" name="name" placeholder="Name*" maxlength="70" required="">
+                                            <input type="text" name="cn" placeholder="Name*" maxlength="70" required="">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-xs-12">
                                         <div class="field">
-                                            <input type="email" name="email" class="email" placeholder="Email*" maxlength="100" required="">
+                                            <input type="email" name="em" class="email" placeholder="Email*" maxlength="100" required="">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 col-xs-12">
                                         <div class="field number">
-                                            <input name="phone" class="required number" type="tel" value="" placeholder="Phone Number*" required="" required="">
+                                            <input name="pn" class="required number" type="tel" value="" placeholder="Phone Number*" required="" required="">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-xs-12">
@@ -2047,6 +1969,7 @@ include(__DIR__ . '/../../includes/config.php');
         .balti_popup ul li input[type="text"],
         .balti_popup ul li input[type="email"],
         .balti_popup ul li input[type="number"],
+        .balti_popup ul li input[type="tel"],
         .balti_popup ul li textarea {
             background: #ffffff;
             border: #dedede 2px solid;
@@ -2188,15 +2111,21 @@ include(__DIR__ . '/../../includes/config.php');
             <h2>We are here to help!</h2>
             <p>Sign up Now To Avail 70% Discount on Your Logo Design</p>
             <div data-form-type="ordernow_form">
-                <form class="validate-balti_popup orderBriefForm">
-                    <input type="hidden" name="logo-brief" value="1" class="form-input">
-                    <input type="hidden" name="subject" value="Landing page popup form" class="form-input">
+                <form class="validate-balti_popup form_submission">
+                    <input type="hidden" name="get-form" value="order_form">
+                    <input type="hidden" name="form-type" value="<?php echo $landing_packages[5]['logo-special']['form_id'] ?? ''; ?>">
+                    <input type="hidden" name="url" value="<?php echo htmlspecialchars(CURRENT_URL, ENT_QUOTES, 'UTF-8'); ?>">
+                    <input type="hidden" name="domain" value="www.<?php echo WEBSITE_LINK ?>">
+                    <input type="hidden" name="subject" value="Landing Page Form (www.<?php echo WEBSITE_LINK ?>)">
+                    <input type="hidden" name="package_name" value="logo-special">
+                    <input type="hidden" name="package_price" value="$59">
+                    <input type="hidden" name="landing_page" value="1">
                     <div class="row">
                         <div class="col-md-12">
                             <ul>
                                 <li>
                                     <i class="fa fa-user" aria-hidden="true"></i>
-                                    <input type="text" class="required form-input" placeholder="Full Name *" name="name" required="required">
+                                    <input type="text" class="required form-input" placeholder="Full Name *" name="cn" required="required">
                                 </li>
                             </ul>
                         </div>
@@ -2204,7 +2133,7 @@ include(__DIR__ . '/../../includes/config.php');
                             <ul>
                                 <li>
                                     <i class="fa fa-envelope" aria-hidden="true"></i>
-                                    <input type="email" class="required email form-input" placeholder="Email Address *" name="email" required="required">
+                                    <input type="email" class="required email form-input" placeholder="Email Address *" name="em" required="required">
                                 </li>
                             </ul>
                         </div>
@@ -2212,7 +2141,7 @@ include(__DIR__ . '/../../includes/config.php');
                             <ul>
                                 <li>
                                     <i class="fa fa-phone" aria-hidden="true"></i>
-                                    <input type="tel" class="required number form-input" minlength="10" placeholder="Phone No. *" name="phone" required="required">
+                                    <input type="tel" class="required number form-input" minlength="10" placeholder="Phone No. *" name="pn" required="required">
                                 </li>
                             </ul>
                         </div>
@@ -2220,7 +2149,7 @@ include(__DIR__ . '/../../includes/config.php');
                             <ul>
                                 <li>
                                     <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                                    <textarea name="message" class="required form-input" required="required" placeholder="To help us understand better enter a brief description of your project."></textarea>
+                                    <textarea name="msg" class="required form-input" required="required" placeholder="To help us understand better enter a brief description of your project."></textarea>
                                 </li>
                             </ul>
                         </div>

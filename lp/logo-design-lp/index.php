@@ -70,19 +70,25 @@ include(__DIR__ . '/../../includes/config.php');
                         <p>Fill The Form To <span>Avail 70% Off</span></p>
                     </div>
                     <div class="footer-form" data-form-type="ordernow_form">
-                        <form class="cmxform orderBriefForm has-validation-callback" id="regForm" method="post">
-                            <input type="hidden" name="logo-brief" value="1" class="form-input">
-                            <input type="hidden" name="subject" value="Landing page banner form" class="form-input">
+                        <form class="form_submission" id="regForm" method="post">
+                            <input type="hidden" name="get-form" value="order_form">
+                            <input type="hidden" name="form-type" value="<?php echo $landing_packages[2]['logo-special']['form_id'] ?? ''; ?>">
+                            <input type="hidden" name="url" value="<?php echo htmlspecialchars(CURRENT_URL, ENT_QUOTES, 'UTF-8'); ?>">
+                            <input type="hidden" name="domain" value="www.<?php echo WEBSITE_LINK ?>">
+                            <input type="hidden" name="subject" value="Landing Page Form (www.<?php echo WEBSITE_LINK ?>)">
+                            <input type="hidden" name="package_name" value="logo-special">
+                            <input type="hidden" name="package_price" value="$35">
+                            <input type="hidden" name="landing_page" value="1">
                             <div class="d-flex mt-3 mb-3">
                                 <div class="form-sec">
                                     <div class="side-form-group tab" style="display: block;">
-                                        <input type="text" class="form-control form-input" name="name" placeholder="Enter Your Name" required="">
+                                        <input type="text" class="form-control form-input" name="cn" placeholder="Enter Your Name" required="">
                                     </div>
                                     <div class="side-form-group tab" style="display: none;">
-                                        <input type="email" class="form-control form-input" placeholder="Enter Your E-mail" name="email" required="">
+                                        <input type="email" class="form-control form-input" placeholder="Enter Your E-mail" name="em" required="">
                                     </div>
                                     <div class="side-form-group tab" style="display: none;">
-                                        <input type="tel" class="form-control form-input" placeholder="Phone no" name="phone" maxlength="11" required="">
+                                        <input type="tel" class="form-control form-input" placeholder="Phone no" name="pn" maxlength="11" required="">
                                     </div>
                                 </div>
                                 <div class="btn-sec">
@@ -1742,17 +1748,23 @@ include(__DIR__ . '/../../includes/config.php');
                     <p><strong>Discount reserved.</strong></p>
                 </div>
                 <div class="popup-body" data-form-type="ordernow_form">
-                    <form class="popup-form orderBriefForm has-validation-callback" method="post">
-                        <input type="hidden" name="logo-brief" value="1" class="form-input">
-                        <input type="hidden" name="subject" value="Landing page popup form" class="form-input">
+                    <form class="popup-form form_submission" method="post">
+                        <input type="hidden" name="get-form" value="order_form">
+                        <input type="hidden" name="form-type" value="<?php echo $landing_packages[2]['logo-special']['form_id'] ?? ''; ?>">
+                        <input type="hidden" name="url" value="<?php echo htmlspecialchars(CURRENT_URL, ENT_QUOTES, 'UTF-8'); ?>">
+                        <input type="hidden" name="domain" value="www.<?php echo WEBSITE_LINK ?>">
+                        <input type="hidden" name="subject" value="Landing Page Form (www.<?php echo WEBSITE_LINK ?>)">
+                        <input type="hidden" name="package_name" value="logo-special">
+                        <input type="hidden" name="package_price" value="$59">
+                        <input type="hidden" name="landing_page" value="1">
                         <div class="form-group">
-                            <input type="text" name="name" class="form-control form-input" placeholder="Full Name" data-validation="required">
+                            <input type="text" name="cn" class="form-control form-input" placeholder="Full Name" data-validation="required">
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" class="form-control form-input" placeholder="Your Email" data-validation="required">
+                            <input type="email" name="em" class="form-control form-input" placeholder="Your Email" data-validation="required">
                         </div>
                         <div class="form-group">
-                            <input type="tel" name="phone" class="form-control form-input" placeholder="Your Phone Number" data-validation="required">
+                            <input type="tel" name="pn" class="form-control form-input" placeholder="Your Phone Number" data-validation="required">
                         </div>
                         <button type="submit" class="cred-btn">Submit</button>
                         <div id="formResult"></div>

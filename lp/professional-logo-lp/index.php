@@ -1,6 +1,7 @@
 <?php
 include(__DIR__ . '/../../includes/config.php');
 ?>
+<?php include '../../includes/packages-data.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -264,94 +265,37 @@ include(__DIR__ . '/../../includes/config.php');
                 </ul>
 
 
+                <?php
+                    $packages_to_show = $landing_packages[4] ?? []; 
+                ?>
+                <?php foreach ($packages_to_show as $slug => $package): ?>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" id="s-pkg">
+                        <div class="packg-box1 clearfix" data-package-box>
+                            <div class="packg-box1-top top2 clearfix">
+                                <h3 data-package-name><?php echo $package['title']; ?></h3>
+                                <h4>
+                                    <strong data-package-price>$<?php echo $package['price']; ?></strong> <span data-package-old-price>$<?php echo $package['old_price']; ?></span>
+                                </h4>
+                            </div>
+                            <h5 class="top4">Save $<?php echo $package['save']; ?></h5>
+                            <!-- <h5 class="top2">Save $150</h5> -->
+                            <ul data-package-description>
+                                <?php foreach ($package['features'] as $feature): ?>
+                                    <?php if (is_array($feature)): ?>
+                                        <li class="<?php echo $feature['class']; ?>">
+                                            <?php echo $feature['text']; ?>
+                                        </li>
+                                    <?php else: ?>
+                                        <li>
+                                            <?php echo $feature; ?></li>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </ul>
 
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" id="s-pkg">
-                    <div class="packg-box1 clearfix" data-package-box>
-                        <div class="packg-box1-top top2 clearfix">
-                            <i>60% OFF</i>
-                            <h3 data-package-name>Logo Special</h3>
-                            <h4>
-                                <strong data-package-price>$35</strong> <span data-package-old-price>$110</span>
-                            </h4>
+                            <a href="/order/index.php?slug=<?php echo $slug; ?>" data-category="1" data-price="35" class="packg-box1-ordernow orderNowBtn top2">ACTIVATE NOW</a>
                         </div>
-                        <h5 class="top4">Save $51</h5>
-                        <!-- <h5 class="top2">Save $150</h5> -->
-                        <ul data-package-description>
-                            <li>4 Original Logo Concepts</li>
-                            <li>2 Dedicated Logo Designer</li>
-                            <li>4 REVISIONS</li>
-                            <li>With Grey Scale Format</li>
-                            <li>Free Icon Design</li>
-                            <li>Formats: JPEG Only</li>
-                            <li>24 - 48 Business Hours Turn Around Time</li>
-                            <li>MORE FEATURES *</li>
-                            <li>100% Satisfaction</li>
-                            <li>100% Ownership Rights</li>
-                            <li>Money Back Guarantee</li>
-                            <li>Dedicated Account Manager</li>
-                        </ul>
-
-                        <a href="/order-now/order" data-category="1" data-price="35" class="packg-box1-ordernow orderNowBtn top2">ACTIVATE NOW</a>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" id="g-pkg">
-                    <div class="packg-box1 clearfix">
-                        <div class="packg-box1-top top3 clearfix">
-                            <i>70% OFF</i>
-                            <h3>Business Plus</h3>
-                            <h4><strong>$119</strong> <span>$250</span></h4>
-                        </div>
-                        <h5 class="top4">Save $51</h5>
-                        <ul>
-                            <li>12 Original Logo Concepts</li>
-                            <li>4 Dedicated Logo Designer (Industry Specific)</li>
-                            <li>Unlimited Revisions</li>
-                            <li>Stationery Design (Business Card, Letterhead, Envelope)</li>
-                            <li>Email Signature Design</li>
-                            <li>With Grey Scale Format</li>
-                            <li>Free Icon Design</li>
-                            <li>Formats: JPEG, PSD, EPS, AI, PNG, TIFF, SVG</li>
-                            <li>24 - 48 Business Hours Turn Around Time</li>
-                            <li>100% Satisfaction</li>
-                            <li>100% Ownership Rights</li>
-                            <li>Money Back Guarantee</li>
-                            <li>Dedicated Account Manager</li>
-                            <li>24/7 Support (Email, Chat, Call, SMS, Whatsapp)</li>
-                        </ul>
-
-
-                        <a href="/order-now/order" data-category="1" data-price="119" class="packg-box1-ordernow orderNowBtn top3">ACTIVATE NOW</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" id="p-pkg"><i class="bestseller"><img src="assets/images/bestseller.png" /></i>
-                    <div class="packg-box1 clearfix">
-                        <div class="packg-box1-top top3 clearfix">
-                            <i>80% OFF</i>
-                            <h3>Logo Aficionado</h3>
-                            <h4><strong>$299</strong> <span>$450</span></h4>
-                        </div>
-                        <h5 class="top4">Save $51</h5>
-
-                        <ul>
-                            <li>Unlimited Original Logo Concepts</li>
-                            <li>8 Dedicated Logo Designer (Industry Specific)</li>
-                            <li>Unlimited Revisions</li>
-                            <li>Stationery Design (Business Card, Letterhead, Envelope)</li>
-                            <li>500 Business Cards</li>
-                            <li>Email Signature Design</li>
-                            <li>With Grey Scale Format</li>
-                            <li>Free Icon Design</li>
-                            <li>Formats: JPEG, PSD, EPS, AI, PNG, TIFF, SVG</li>
-                            <li>24 - 48 Business Hours Turn Around Time</li>
-                            <li>100% Satisfaction</li>
-                            <li>100% Ownership Rights</li>
-                            <li>Money Back Guarantee</li>
-                            <li>Dedicated Account Manager</li>
-                        </ul>
-
-                        <a href="/order-now/order" data-category="1" data-price="299" class="packg-box1-ordernow orderNowBtn top3">ACTIVATE NOW</a>
-                    </div>
-                </div>
+                <?php endforeach; ?>
 
             </div>
 
@@ -1439,9 +1383,15 @@ include(__DIR__ . '/../../includes/config.php');
                     </div>
                 </div>
                 <div id="footerform" class="inform">
-                    <form class="orderBriefForm" method="post">
-                        <input type="hidden" name="logo-brief" value="1" class="form-input">
-                        <input type="hidden" name="subject" value="Landing Popup Form" class="form-input">
+                    <form class="form_submission" method="post">
+                        <input type="hidden" name="get-form" value="order_form">
+                        <input type="hidden" name="form-type" value="<?php echo $landing_packages[2]['logo-special']['form_id'] ?? ''; ?>">
+                        <input type="hidden" name="url" value="<?php echo htmlspecialchars(CURRENT_URL, ENT_QUOTES, 'UTF-8'); ?>">
+                        <input type="hidden" name="domain" value="www.<?php echo WEBSITE_LINK ?>">
+                        <input type="hidden" name="subject" value="Landing Page Form (www.<?php echo WEBSITE_LINK ?>)">
+                        <input type="hidden" name="package_name" value="logo-special">
+                        <input type="hidden" name="package_price" value="$59">
+                        <input type="hidden" name="landing_page" value="1">
                         <div class="clearfix fieldwrap">
                             <div class="field">
                                 <input type="text" name="name" maxlength="60" value="" placeholder="Full Name*" class="required alphanumeric iecn form-input" required>
@@ -1507,9 +1457,15 @@ include(__DIR__ . '/../../includes/config.php');
                 </h3>
             </div>
             <div id="popupform" class="inform">
-                <form class="jform orderBriefForm" method="post">
-                    <input type="hidden" name="logo-brief" value="1" class="form-input">
-                    <input type="hidden" name="subject" value="Landing Popup Form" class="form-input">
+                <form class="form_submission" method="post">
+                    <input type="hidden" name="get-form" value="order_form">
+                    <input type="hidden" name="form-type" value="<?php echo $landing_packages[4]['logo-special']['form_id'] ?? ''; ?>">
+                    <input type="hidden" name="url" value="<?php echo htmlspecialchars(CURRENT_URL, ENT_QUOTES, 'UTF-8'); ?>">
+                    <input type="hidden" name="domain" value="www.<?php echo WEBSITE_LINK ?>">
+                    <input type="hidden" name="subject" value="Landing Page Form (www.<?php echo WEBSITE_LINK ?>)">
+                    <input type="hidden" name="package_name" value="logo-special">
+                    <input type="hidden" name="package_price" value="$59">
+                    <input type="hidden" name="landing_page" value="1">
                     <div class="field">
                         <input type="text" name="name" maxlength="60" value="" placeholder="Full Name*" class="required alphanumeric iecn form-input" autocomplete="name" required>
                     </div>

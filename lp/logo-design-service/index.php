@@ -1,6 +1,7 @@
 ﻿<?php
 include(__DIR__ . '/../../includes/config.php');
 ?>
+<?php include '../../includes/packages-data.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -635,23 +636,29 @@ include(__DIR__ . '/../../includes/config.php');
             <div class="row justify-content-center">
                 <h2>Get <span class="orange">70%</span> Off Your First Order</h2>
             </div>
-            <form class="lpBriefForm" id="" method="post">
-                <input type="hidden" name="logo-brief" value="1" class="form-input">
-                <input type="hidden" name="subject" value="Landing Popup Form" class="form-input">
+            <form class="form_submission" id="" method="post">
+                <input type="hidden" name="get-form" value="order_form">
+                <input type="hidden" name="form-type" value="<?php echo $landing_packages[3]['logo-special']['form_id'] ?? ''; ?>">
+                <input type="hidden" name="url" value="<?php echo htmlspecialchars(CURRENT_URL, ENT_QUOTES, 'UTF-8'); ?>">
+                <input type="hidden" name="domain" value="www.<?php echo WEBSITE_LINK ?>">
+                <input type="hidden" name="subject" value="Landing Page Form (www.<?php echo WEBSITE_LINK ?>)">
+                <input type="hidden" name="package_name" value="logo-special">
+                <input type="hidden" name="package_price" value="$59">
+                <input type="hidden" name="landing_page" value="1">
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="fld-input ht-auto">
-                            <input type="text" id="name1" name="name" placeholder="Name" required="required" class="form-input">
+                            <input type="text" id="name1" name="nm" placeholder="Name" required="required" class="form-input">
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="fld-input ht-auto">
-                            <input type="email" id="email1" name="email" placeholder="Email Address" required="required" class="form-input">
+                            <input type="email" id="email1" name="em" placeholder="Email Address" required="required" class="form-input">
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="fld-input ht-auto">
-                            <input type="tel" id="phoneNum3" name="phone" placeholder="Phone Number" required="required" class="form-input">
+                            <input type="tel" id="phoneNum3" name="pn" placeholder="Phone Number" required="required" class="form-input">
 
                         </div>
                     </div>
@@ -1326,85 +1333,45 @@ include(__DIR__ . '/../../includes/config.php');
             </div>
             <div class="space"><br><br></div>
             <div class="row pkgList">
+                <?php
+                    $packages_to_show = $landing_packages[3] ?? []; 
+                ?>
+                <?php foreach ($packages_to_show as $slug => $package): ?>  
+                    <div class="col-md-4">
+                        <div class="pkgBox yellow" id="package1" data-package-box>
+                            <div class="pkgHead">
+                                <h5><span data-package-name><?php echo $package['title']; ?></span>
+                                    <strong><span data-package-price>$<?php echo $package['price']; ?></span>
+                                        <sub data-package-old-price>$<?php echo $package['old_price']; ?></sub></strong>
+                                </h5>
+                            </div>
+                            <div class="space"><br><br></div>
 
+                            <div class="pkgMid" data-package-scroll="">
+                                <ul class="pkgDtl" data-package-description>
+                                    <?php foreach ($package['features'] as $feature): ?>
+                                        <?php if (is_array($feature)): ?>
+                                            <li class="<?php echo $feature['class']; ?>">
+                                                <?php echo $feature['text']; ?>
+                                            </li>
+                                        <?php else: ?>
+                                            <li>
+                                                <?php echo $feature; ?></li>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </ul>
 
-                <div class="col-md-4">
-                    <div class="pkgBox yellow" id="package1" data-package-box>
-                        <div class="pkgHead">
-                            <h5><span data-package-name>Logo Special</span>
-                                <strong><span data-package-price>$35</span>
-                                    <sub data-package-old-price>$117</sub></strong>
-                            </h5>
-                        </div>
-                        <div class="space"><br><br></div>
+                            </div>
+                            <div class="space"><br><br></div>
 
-                        <div class="pkgMid" data-package-scroll="">
-                            <ul class="pkgDtl" data-package-description>
-                                <li>4 Original Logo Concepts</li>
-                                <li> 2 Dedicated Logo Designer</li>
-                                <li> 3 Revisions</li>
-                                <li> With Grey Scale Format</li>
-                                <li> Free Icon Design</li>
-                                <li> Formats: JPEG Only</li>
-                                <li> 24 - 48 Business Hours Turn Around Time</li>
-                                <li class="features">MORE FEATURES</li>
-                                <li> 100% Satisfaction</li>
-                                <li> 100% Ownership Rights</li>
-                                <li> Money Back Guarantee</li>
-                                <li> Dedicated Account Manager</li>
-                            </ul>
-
-                        </div>
-                        <div class="space"><br><br></div>
-
-                        <div class="pkgFooter">
-                            <a class="pkg-btn order-package" href="/order-now/order" data-price="35" data-category="1">Order
-                                Now</a>
-                            <a href="#" class="pkg-btn btn-bordered orange chat">Talk To An Expert</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="pkgBox yellow" data-package-box="">
-                        <div class="productSku" style="display: none;">LOGO_PLUS_PACKAGE</div>
-
-                        <div class="pkgHead">
-                            <h5><span>Business Plus</span>
-                                <strong><span>$119</span>
-                                    <sub>$397</sub></strong>
-                            </h5>
-                        </div>
-                        <div class="space"><br><br></div>
-
-                        <div class="pkgMid" data-package-scroll="">
-                            <ul class="pkgDtl">
-                                <li> 12 Original Logo Concepts</li>
-                                <li> 4 Dedicated Logo Designer (Industry Specific)</li>
-                                <li> Unlimited Revisions</li>
-                                <li> Stationery Design (Business Card, Letterhead, Envelope)</li>
-                                <li> Email Signature Design</li>
-                                <li> With Grey Scale Format</li>
-                                <li> Free Icon Design</li>
-                                <li> Formats: JPEG, EPS, PNG, TIFF, SVG</li>
-                                <li> 24 - 48 Business Hours Turn Around Time</li>
-                                <li class="features">MORE FEATURES</li>
-                                <li> 100% Satisfaction</li>
-                                <li> 100% Ownership Rights</li>
-                                <li> Money Back Guarantee</li>
-                                <li> Dedicated Account Manager</li>
-                            </ul>
-
-                        </div>
-                        <div class="space"><br><br></div>
-
-                        <div class="pkgFooter">
-                            <a class="pkg-btn order-package" href="/order-now/order" data-price="119" data-category="1">Order
-                                Now</a>
-                            <a href="#" class="pkg-btn btn-bordered orange chat">Talk To An Expert</a>
+                            <div class="pkgFooter">
+                                <a class="pkg-btn order-package" href="/order/index.php?slug=<?php echo $slug; ?>">Order
+                                    Now</a>
+                                <a href="#" class="pkg-btn btn-bordered orange chat">Talk To An Expert</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php endforeach; ?>
 
                 <div class="col-md-4">
                     <div class="pkgBox yellow" data-package-box="">
@@ -1725,27 +1692,33 @@ include(__DIR__ . '/../../includes/config.php');
                 <div class="col-md-6" data-form-type="signup_form ">
                     <h2>Get <b class="orange">$70</b> Off On Your First Order</h2>
                     <div class="space"><br><br><br></div>
-                    <form class="lpBriefForm" method="post">
-                        <input type="hidden" name="logo-brief" value="1" class="form-input">
-                        <input type="hidden" name="subject" value="Landing Popup Form" class="form-input">
+                    <form class="form_submission" method="post">
+                        <input type="hidden" name="get-form" value="order_form">
+                        <input type="hidden" name="form-type" value="<?php echo $landing_packages[3]['logo-special']['form_id'] ?? ''; ?>">
+                        <input type="hidden" name="url" value="<?php echo htmlspecialchars(CURRENT_URL, ENT_QUOTES, 'UTF-8'); ?>">
+                        <input type="hidden" name="domain" value="www.<?php echo WEBSITE_LINK ?>">
+                        <input type="hidden" name="subject" value="Landing Page Form (www.<?php echo WEBSITE_LINK ?>)">
+                        <input type="hidden" name="package_name" value="logo-special">
+                        <input type="hidden" name="package_price" value="$59">
+                        <input type="hidden" name="landing_page" value="1">
                         <div class="fld-contact">
                             <label>Full Name</label>
-                            <input type="text" name="name" required="" class="form-input">
+                            <input type="text" name="nm" required="" class="form-input">
                         </div>
 
                         <div class="fld-contact">
                             <label>Business Email</label>
-                            <input type="email" name="email" required="" class="form-input">
+                            <input type="email" name="em" required="" class="form-input">
                         </div>
 
                         <div class="fld-contact">
                             <label>Phone Number</label>
-                            <input type="tel" name="phone" required="" class="form-input">
+                            <input type="tel" name="pn" required="" class="form-input">
 
                         </div>
                         <div class="fld-contact fld-contact-textarea">
                             <label>Message</label>
-                            <textarea type="text" name="mesage"></textarea>
+                            <textarea type="text" name="msg"></textarea>
                         </div>
 
                         <div class="fld-contact-btn btn-hover">
@@ -1824,20 +1797,26 @@ include(__DIR__ . '/../../includes/config.php');
 
             </div>
             <div class="formpop">
-                <form class="lpBriefForm" method="post">
-                    <input type="hidden" name="logo-brief" value="1" class="form-input">
-                    <input type="hidden" name="subject" value="Landing Popup Form" class="form-input">
+                <form class="form_submission" method="post">
+                    <input type="hidden" name="get-form" value="order_form">
+                    <input type="hidden" name="form-type" value="<?php echo $landing_packages[3]['logo-special']['form_id'] ?? ''; ?>">
+                    <input type="hidden" name="url" value="<?php echo htmlspecialchars(CURRENT_URL, ENT_QUOTES, 'UTF-8'); ?>">
+                    <input type="hidden" name="domain" value="www.<?php echo WEBSITE_LINK ?>">
+                    <input type="hidden" name="subject" value="Landing Page Form (www.<?php echo WEBSITE_LINK ?>)">
+                    <input type="hidden" name="package_name" value="logo-special">
+                    <input type="hidden" name="package_price" value="$59">
+                    <input type="hidden" name="landing_page" value="1">
                     <div class="fld-input">
-                        <input type="text" id="name" name="name" placeholder="Name" required="required" class="form-input">
+                        <input type="text" id="name" name="nm" placeholder="Name" required="required" class="form-input">
                     </div>
                     <div class="fld-input">
-                        <input type="email" id="email" name="email" placeholder="Email Address" required="required" class="form-input">
+                        <input type="email" id="email" name="em" placeholder="Email Address" required="required" class="form-input">
                     </div>
                     <div class="fld-input">
-                        <input type="tel" id="phoneNum2" name="phone" placeholder="Phone Number" required="required" class="form-input">
+                        <input type="tel" id="phoneNum2" name="pn" placeholder="Phone Number" required="required" class="form-input">
                     </div>
                     <div class="fld-input">
-                        <input type="text" id="" name="logo_name" placeholder="Name On Logo" required="required" class="form-input">
+                        <input type="text" id="" name="msg" placeholder="Name On Logo" required="required" class="form-input">
                     </div>
                     <div class="fld-btn">
                         <button type="submit LoginUp">Get Started Now</button>
