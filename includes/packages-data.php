@@ -344,7 +344,7 @@ $landing_packages = [
             "title" => "Logo Special",
             "tagline" => "Ideal solution for beginners",
             "discount" => "70% Off",
-            "price" => 59,
+            "price" => 35,
             "old_price" => 196,
             "form_id" => 0,
             "features" => [
@@ -474,7 +474,480 @@ $landing_packages = [
         ]
     ],
     2 => [
-
+        "logo-special" => [
+            "title" => "Logo Special",
+            "icon"  => "packages-icon-sprite-package-icon-1",
+            "price" => 35,
+            "old_price" => 117,
+            "form_id" => 0,
+            "features" => [
+                "4 Original Logo Concepts",
+                "2 Dedicated Logo Designer",
+                "Unlimited Revisions",
+                "With Grey Scale Format",
+                "Free Icon Design",
+                "Formats: JPEG Only",
+                "24 - 48 Business Hours Turn Around Time",
+                [
+                    "text" => "MORE FEATURES",
+                    "class" => "features"
+                ],
+                "100% Satisfaction",
+                "100% Ownership Rights",
+                "Money Back Guarantee",
+                "Dedicated Account Manager"
+            ]
+        ],
+        "Logo Plus" => [
+            "title" => "Logo Plus",
+            "icon"  => "packages-icon-sprite-package-icon-2",
+            "price" => 119,
+            "old_price" => 397,
+            "form_id" => 0,
+            "features" => [
+                "12 Original Logo Concepts",
+                "4 Dedicated Logo Designer (Industry Specific)",
+                "Unlimited Revisions",
+                "Stationery Design (Business Card, Letterhead, Envelope)",
+                "Email Signature Design",
+                "With Grey Scale Format",
+                "Free Icon Design",
+                "Formats: JPEG, PSD, EPS, AI, PNG, TIFF, SVG",
+                "24 - 48 Business Hours Turn Around Time",
+                [
+                    "text" => "MORE FEATURES",
+                    "class" => "features"
+                ],
+                "100% Satisfaction",
+                "100% Ownership Rights",
+                "Money Back Guarantee",
+                "Dedicated Account Manager"
+            ]
+        ],
+        "Logo Platinum" => [
+            "title" => "Logo Platinum",
+            "icon"  => "packages-icon-sprite-package-icon-3",
+            "price" => 299,
+            "old_price" => 997,
+            "form_id" => 0,
+            "features" => [
+                "12 Original Logo Concepts",
+                "8 Dedicated Logo Designer (Industry Specific)",
+                "Unlimited Revisions",
+                "Stationery Design (Business Card, Letterhead, Envelope)",
+                "500 Business Cards",
+                "Email Signature Design",
+                "With Grey Scale Format",
+                "Free Icon Design", 
+                "Formats: JPEG, PSD, EPS, AI, PNG, TIFF, SVG",
+                "24 - 48 Business Hours Turn Around Time",
+                [
+                    "text" => "MORE FEATURES",
+                    "class" => "features"
+                ],
+                "100% Satisfaction",
+                "100% Ownership Rights",
+                "Money Back Guarantee",
+                "Dedicated Account Manager"
+            ]
+        ],
+        "Logo Infinite" => [
+            "title" => "Logo Infinite",
+            "price" => 1249,
+            "old_price" => 3330,
+            "form_id" => 0,
+            "features" => [
+                "Unlimited Original Logo Concepts",
+                "8 Dedicated Logo Designer (Industry Specific)",
+                "Unlimited Revisions",
+                "5 Page Informative Website",
+                "Stationery Design (Business Card, Letterhead, Envelope)",
+                "Brand Book",
+                "500 Business Cards",
+                "500 Letterheads",
+                "Email Signature Design",
+                "Social Media Designs (Facebook, Twitter, Instagram)",
+                "2 Sided Flyer OR Bi-Fold Brochure Design",
+                "Free Icon Design", 
+                "Formats: JPEG, PSD, EPS, AI, PNG, TIFF, SVG",
+                "24 - 48 Business Hours Turn Around Time",
+                [
+                    "text" => "MORE FEATURES",
+                    "class" => "features"
+                ],
+                "100% Satisfaction",
+                "100% Ownership Rights",
+                "Money Back Guarantee",
+                "Dedicated Account Manager"
+            ]
+        ],
+        "Logo Combo" => [
+            "title" => "Logo Combo",
+            "price" => 1499,
+            "old_price" => 3999,
+            "form_id" => 0,
+            "features" => [
+                "Unlimited Original Logo Concepts",
+                "12 Dedicated Logo Designer (Industry Specific)",
+                "Unlimited Revisions",
+                "E-commerce Website",
+                "Stationery Design (Business Card, Letterhead, Envelope)",
+                "Brand Book",
+                "500 Business Cards",
+                "500 Letterheads",
+                "Email Signature Design",
+                "Social Media Designs (Facebook, Twitter, Instagram)",
+                "2 Sided Flyer OR Bi-Fold Brochure Design",
+                "Free Icon Design", 
+                "Formats: JPEG, PSD, EPS, AI, PNG, TIFF, SVG",
+                "24 - 48 Business Hours Turn Around Time",
+                [
+                    "text" => "MORE FEATURES",
+                    "class" => "features"
+                ],
+                "100% Satisfaction",
+                "100% Ownership Rights",
+                "Money Back Guarantee",
+                "Dedicated Account Manager"
+            ]
+        ]
+    ],
+    3 => [
+        "logo-special" => [
+            "title" => "Logo Special",
+            "price" => 35,
+            "old_price" => 117,
+            "form_id" => 0,
+            "features" => [
+                "4 Original Logo Concepts",
+                "2 Dedicated Logo Designer",
+                "3 Revisions",
+                "With Grey Scale Format",
+                "Free Icon Design",
+                "Formats: JPEG Only",
+                "24 - 48 Business Hours Turn Around Time",
+                [
+                    "text" => "MORE FEATURES",
+                    "class" => "more-features"
+                ],
+                "100% Satisfaction",
+                "100% Ownership Rights",
+                "Money Back Guarantee",
+                "Dedicated Account Manager"
+            ]
+        ],
+        "business-plus" => [
+            "title" => "Business Plus",
+            "price" => 119,
+            "old_price" => 397,
+            "form_id" => 0,
+            "features" => [
+                "12 Original Logo Concepts",
+                "4 Dedicated Logo Designer (Industry Specific)",
+                "Unlimited Revisions",
+                "Stationery Design (Business Card, Letterhead, Envelope)",
+                "Email Signature Design",
+                "With Grey Scale Format",
+                "Free Icon Design",
+                "Formats: JPEG, EPS, PNG, TIFF, SVG",
+                "24 - 48 Business Hours Turn Around Time",
+                [
+                    "text" => "MORE FEATURES",
+                    "class" => "more-features"
+                ],
+                "100% Satisfaction",
+                "100% Ownership Rights",
+                "Money Back Guarantee",
+                "Dedicated Account Manager"
+            ]
+        ],
+        "logo-aficionado" => [
+            "title" => "Logo Aficionado",
+            "price" => 299,
+            "old_price" => 997,
+            "form_id" => 0,
+            "features" => [
+                "Unlimited Original Logo Concepts",
+                "8 Dedicated Logo Designer (Industry Specific)",
+                "Unlimited Revisions",
+                "Stationery Design (Business Card, Letterhead, Envelope)",
+                "500 Business Cards",
+                "Email Signature Design",
+                "With Grey Scale Format",
+                "Free Icon Design",
+                "Formats: JPEG, EPS, PSD, PNG, AI, TIFF, SVG",
+                "24 - 48 Business Hours Turn Around Time",
+                [
+                    "text" => "MORE FEATURES",
+                    "class" => "more-features"
+                ],
+                "100% Satisfaction",
+                "100% Ownership Rights",
+                "Money Back Guarantee",
+                "Dedicated Account Manager"
+            ]
+        ],
+        "business-startup" => [
+            "title" => "Business Startup",
+            "price" => 899,
+            "old_price" => 1899,
+            "form_id" => 0,
+            "features" => [
+                "Upto 5 Page Customized Website",
+                "Complete Designing &amp; Deployment",
+                "Unlimited Logo Design Concepts",
+                "Unlimited Revisions",
+                "Complete Stationery Design",
+                "Social Media Banner Design",
+                "All File Formats including (AI &amp; EPS)",
+                "Free Favicon Design",
+                "Value Added Services",
+                "Dedicated Account Manager",
+                "Fastest Turnaround Time",
+                "100% Ownership"
+            ]
+        ]
+    ],
+    4 => [
+        "logo-special" => [
+            "title" => "Logo Special",
+            "price" => 35,
+            "old_price" => 110,
+            "save" => 75,
+            "form_id" => 0,
+            "features" => [
+                "4 Original Logo Concepts",
+                "2 Dedicated Logo Designer",
+                "4 Revisions",
+                "With Grey Scale Format",
+                "Free Icon Design",
+                "Formats: JPEG Only",
+                "24 - 48 Business Hours Turn Around Time",
+                "MORE FEATURES *",
+                "100% Satisfaction",
+                "100% Ownership Rights",
+                "Money Back Guarantee",
+                "Dedicated Account Manager"
+            ]
+        ],
+        "business-plus" => [
+            "title" => "Business Plus",
+            "price" => 199,
+            "old_price" => 250,
+            "save" => 51,
+            "form_id" => 0,
+            "features" => [
+                "12 Original Logo Concepts",
+                "4 Dedicated Logo Designer (Industry Specific)",
+                "Unlimited Revisions",
+                "Stationery Design (Business Card, Letterhead, Envelope)",
+                "Email Signature Design",
+                "With Grey Scale Format",
+                "Free Icon Design",
+                "Formats: JPEG, EPS, PNG, TIFF, SVG",
+                "24 - 48 Business Hours Turn Around Time",
+                "100% Satisfaction",
+                "100% Ownership Rights",
+                "Money Back Guarantee",
+                "Dedicated Account Manager",
+                "24/7 Support (Email, Chat, Call, SMS, Whatsapp)"
+            ]
+        ],
+        "logo-aficionado" => [
+            "title" => "Logo Aficionado",
+            "price" => 299,
+            "old_price" => 450,
+            "save" => 151,
+            "form_id" => 0,
+            "features" => [
+                "Unlimited Original Logo Concepts",
+                "8 Dedicated Logo Designer (Industry Specific)",
+                "Unlimited Revisions",
+                "Stationery Design (Business Card, Letterhead, Envelope)",
+                "500 Business Cards",
+                "Email Signature Design",
+                "With Grey Scale Format",
+                "Free Icon Design",
+                "Formats: JPEG, EPS, PSD, PNG, AI, TIFF, SVG",
+                "24 - 48 Business Hours Turn Around Time",
+                "100% Satisfaction",
+                "100% Ownership Rights",
+                "Money Back Guarantee",
+                "Dedicated Account Manager"
+            ]
+        ],
+        "business-startup" => [
+            "title" => "Business Startup",
+            "price" => 799,
+            "old_price" => 1899,
+            "form_id" => 0,
+            "features" => [
+                "Upto 5 Page Customized Website",
+                "Complete Designing &amp; Deployment",
+                "Unlimited Logo Design Concepts",
+                "Unlimited Revisions",
+                "Complete Stationery Design",
+                "Social Media Banner Design",
+                "All File Formats including (AI &amp; EPS)",
+                "Free Favicon Design",
+                "Value Added Services",
+                "Dedicated Account Manager",
+                "Fastest Turnaround Time",
+                "100% Ownership",
+                "100% Unique Design Guarantee",
+                "100% Satisfaction Guarantee",
+                "100% Money Back Guarantee*"
+            ]
+        ],
+        "ecommerce-startup" => [
+            "title" => "Ecommerce Startup",
+            "price" => 1499,
+            "old_price" => 3330,
+            "form_id" => 0,
+            "features" => [
+                "5 Pages Website (Wordpress)",
+                "UNLIMITED Logo Design Concepts",
+                "Creative Design Team (8)",
+                "Dedicated Development Team (2)",
+                "UNLIMITED Revisions",
+                "FREE Business Card Design",
+                "FREE Letterhead Design",
+                "FREE Envelope Design",
+                "FREE MS Word Letterhead",
+                "FREE Icon Design",
+                "FREE Banner Design",
+                "FREE Email Signature",
+                "Vector Formats (AI, PSD, EPS, PNG, GIF, JPG, PDF)",
+                "Ownership Rights",
+                "Satisfaction Guaranteed",
+                "Unique Design Guaranteed",
+                "Money Back Guarantee*"
+            ]
+        ]
+    ],
+    5 => [
+        "logo-special" => [
+            "title" => "Logo Special",
+            "price" => 35,
+            "old_price" => 117,
+            "form_id" => 0,
+            "features" => [
+                "4 Original Logo Concepts",
+                "2 Dedicated Logo Designer",
+                "3 Revisions",
+                "With Grey Scale Format",
+                "Free Icon Design",
+                "Formats: JPEG Only",
+                "24 - 48 Business Hours Turn Around Time",
+                [
+                    "text" => "MORE FEATURES",
+                    "class" => "more-features"
+                ],
+                "100% Satisfaction",
+                "100% Ownership Rights",
+                "Money Back Guarantee",
+                "Dedicated Account Manager"
+            ]
+        ],
+        "business-plus" => [
+            "title" => "Business Plus",
+            "price" => 119,
+            "old_price" => 397,
+            "form_id" => 0,
+            "features" => [
+                "12 Original Logo Concepts",
+                "4 Dedicated Logo Designer (Industry Specific)",
+                "Unlimited Revisions",
+                "Stationery Design (Business Card, Letterhead, Envelope)",
+                "Email Signature Design",
+                "With Grey Scale Format",
+                "Free Icon Design",
+                "Formats: JPEG, EPS, PNG, TIFF, SVG",
+                "24 - 48 Business Hours Turn Around Time",
+                [
+                    "text" => "MORE FEATURES",
+                    "class" => "more-features"
+                ],
+                "100% Satisfaction",
+                "100% Ownership Rights",
+                "Money Back Guarantee",
+                "Dedicated Account Manager"
+            ]
+        ],
+        "logo-aficionado" => [
+            "title" => "Logo Aficionado",
+            "price" => 299,
+            "old_price" => 997,
+            "form_id" => 0,
+            "features" => [
+                "Unlimited Original Logo Concepts",
+                "8 Dedicated Logo Designer (Industry Specific)",
+                "Unlimited Revisions",
+                "Stationery Design (Business Card, Letterhead, Envelope)",
+                "500 Business Cards",
+                "Email Signature Design",
+                "With Grey Scale Format",
+                "Free Icon Design",
+                "Formats: JPEG, EPS, PSD, PNG, AI, TIFF, SVG",
+                "24 - 48 Business Hours Turn Around Time",
+                [
+                    "text" => "MORE FEATURES",
+                    "class" => "more-features"
+                ],
+                "100% Satisfaction",
+                "100% Ownership Rights",
+                "Money Back Guarantee",
+                "Dedicated Account Manager"
+            ]
+        ],
+        "business-startup" => [
+            "title" => "Business Startup",
+            "price" => 799,
+            "old_price" => 1899,
+            "form_id" => 0,
+            "features" => [
+                "Upto 5 Page Customized Website",
+                "Complete Designing &amp; Deployment",
+                "Unlimited Logo Design Concepts",
+                "Unlimited Revisions",
+                "Complete Stationery Design",
+                "Social Media Banner Design",
+                "All File Formats including (AI &amp; EPS)",
+                "Free Favicon Design",
+                "Value Added Services",
+                "Dedicated Account Manager",
+                "Fastest Turnaround Time",
+                "100% Ownership",
+                "100% Unique Design Guarantee",
+                "100% Satisfaction Guarantee",
+                "100% Money Back Guarantee*"
+            ]
+        ],
+        "ecommerce-startup" => [
+            "title" => "Ecommerce Startup",
+            "price" => 1499,
+            "old_price" => 3330,
+            "form_id" => 0,
+            "features" => [
+                "5 Pages Website (Wordpress)",
+                "UNLIMITED Logo Design Concepts",
+                "Creative Design Team (8)",
+                "Dedicated Development Team (2)",
+                "UNLIMITED Revisions",
+                "FREE Business Card Design",
+                "FREE Letterhead Design",
+                "FREE Envelope Design",
+                "FREE MS Word Letterhead",
+                "FREE Icon Design",
+                "FREE Banner Design",
+                "FREE Email Signature",
+                "Vector Formats (AI, PSD, EPS, PNG, GIF, JPG, PDF)",
+                "Ownership Rights",
+                "Satisfaction Guaranteed",
+                "Unique Design Guaranteed",
+                "Money Back Guarantee*"
+            ]
+        ]
     ]
 ];
 

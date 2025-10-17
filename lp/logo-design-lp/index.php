@@ -1,6 +1,7 @@
 ﻿<?php
 include(__DIR__ . '/../../includes/config.php');
 ?>
+<?php include '../../includes/packages-data.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -953,129 +954,44 @@ include(__DIR__ . '/../../includes/config.php');
             </div>
             <div class="packages-inner-container">
                 <div class="packages-slider">
+                    <?php
+                        $packages_to_show = $landing_packages[2] ?? []; 
+                    ?>
+                    <?php foreach ($packages_to_show as $slug => $package): ?>  
+                        <div class="package-box" data-package-box>
+                            <div class="package-hdr">
+                                <h3 data-package-name><?php echo $package['title']; ?></h3>
+                                <i class="packages-icon-sprite <?php echo $package['icon']; ?>"></i>
 
-
-                    <div class="package-box" data-package-box>
-                        <div class="package-hdr">
-                            <h3 data-package-name> Logo Special </h3>
-                            <i class="packages-icon-sprite packages-icon-sprite-package-icon-1"></i>
-
-                            <div class="package-price-wrapper">
-                                <span class="d-none" data-package-price>$35</span>
-                                <span class="d-none" data-package-old-price>$117</span>
-                                <span>$</span>
-                                <span>35</span>
-                                <span>117</span>
+                                <div class="package-price-wrapper">
+                                    <span>$</span>
+                                    <span><?php echo $package['price']; ?></span>
+                                    <span><?php echo $package['old_price']; ?></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="package-body" data-package-scroll="">
-                            <ul data-package-description>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i>4 Original Logo Concepts</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> 2 Dedicated Logo Designer</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Unlimited Revisions</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> With Grey Scale Format</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Free Icon Design</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Formats: JPEG Only</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> 24 - 48 Business Hours Turn Around Time</li>
-                                <li class="features">MORE FEATURES</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> 100% Satisfaction</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> 100% Ownership Rights</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Money Back Guarantee</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Dedicated Account Manager</li>
-                            </ul>
-                        </div>
-                        <div class="package-ftr">
-                            <a class="cred-btn order-package" href="/order-now/order" data-category="1" data-price="35">Order
-                                Now
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="package-box">
-                        <div class="package-hdr">
-                            <h3> Logo Plus </h3>
-                            <i class="packages-icon-sprite packages-icon-sprite-package-icon-2"></i>
-
-                            <div class="package-price-wrapper">
-                                <span class="d-none">$119</span>
-                                <span class="d-none">$397</span>
-                                <span>$</span>
-                                <span>119</span>
-                                <span>397</span>
+                            <div class="package-body" data-package-scroll="">
+                                <ul data-package-description>
+                                     <?php foreach ($package['features'] as $feature): ?>
+                                            <?php if (is_array($feature)): ?>
+                                                <li class="<?php echo $feature['class']; ?>">
+                                                    <?php echo $feature['text']; ?>
+                                                </li>
+                                            <?php else: ?>
+                                                <li>
+                                                    <i class="fa fa-caret-right" aria-hidden="true"></i>
+                                                    <?php echo $feature; ?></li>
+                                            <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="package-body" data-package-scroll="">
-                            <ul>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> 12 Original Logo Concepts</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> 4 Dedicated Logo Designer (Industry Specific)</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Unlimited Revisions</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Stationery Design (Business Card, Letterhead, Envelope)</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Email Signature Design</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> With Grey Scale Format</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Free Icon Design</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Formats: JPEG, PSD, EPS, AI, PNG, TIFF, SVG</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> 24 - 48 Business Hours Turn Around Time</li>
-                                <li class="features">MORE FEATURES</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> 100% Satisfaction</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> 100% Ownership Rights</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Money Back Guarantee</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Dedicated Account Manager</li>
-                            </ul>
-                        </div>
-                        <div class="package-ftr">
-                            <a class="cred-btn order-package" href="/order-now/order" data-category="1" data-price="119">Order
-                                Now
-                            </a>
+                            <div class="package-ftr">
+                                <a class="cred-btn order-package" href="/order/index.php?slug=<?php echo $slug; ?>" data-category="1" data-price="35">Order
+                                    Now
+                                </a>
 
-                        </div>
-
-                    </div>
-
-
-                    <div class="package-box">
-                        <div class="package-hdr">
-                            <h3> Logo Platinum </h3>
-                            <i class="packages-icon-sprite packages-icon-sprite-package-icon-3"></i>
-
-                            <div class="package-price-wrapper">
-                                <span class="d-none">$299</span>
-                                <span class="d-none">$997</span>
-                                <span>$</span>
-                                <span>299</span>
-                                <span>997</span>
                             </div>
-                        </div>
-                        <div class="package-body" data-package-scroll="">
-                            <ul>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i>Unlimited Original Logo Concepts</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i>8 Dedicated Logo Designer (Industry Specific)</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i>Unlimited Revisions</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i>Stationery Design (Business Card, Letterhead, Envelope)</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i>500 Business Cards </li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i>Email Signature Design</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i>With Grey Scale Format</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i>Free Icon Design</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i>Formats: JPEG, PSD, EPS, AI, PNG, TIFF, SVG</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i>24 - 48 Business Hours Turn Around Time</li>
-                                <li class="features">MORE FEATURES</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i>100% Satisfaction</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i>100% Ownership Rights</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i>Money Back Guarantee</li>
-                                <li><i class="fa fa-caret-right" aria-hidden="true"></i>Dedicated Account Manager</li>
-                            </ul>
-                        </div>
-                        <div class="package-ftr">
-                            <a class="cred-btn order-package" href="/order-now/order" data-category="1" data-price="299">Order
-                                Now
-                            </a>
-
-                        </div>
-
-                    </div>
+                        </div> 
+                    <?php endforeach; ?>
 
                 </div>
             </div>
